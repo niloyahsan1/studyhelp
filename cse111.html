@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cse110.css">
+    <title>CSE111</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan/studyhelp.git"><img src="./p/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>CSE111</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>Programming Languages II: Python</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/Ely-6hgqZPFIk__tyKMTXuUBZzL_O3nteD3jYZi-lSI_hw?e=0EmhEx', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Assignment Questions</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EmOIscukmBNFqW383hQDHCIBzr2Napb0RjQUw0t_jao7Cw?e=uvHEG7', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Assignment Solutions</h3>
+        </div>
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EoZakunhyOFMuTmse_bc_Y8B-_pRlmwFPSna0pTSvF5Ztg?e=3diJN7', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Quiz Questions</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/Eim81sIabgBEl8NhTRJ4C14Bdr98NbHCqnuM1_HgD9hrQw?e=SO8mwF', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Mid & Final Questions</h3>
+        </div>
+    </div>
+    <!-- =============================================================================================================== -->
+
+
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>

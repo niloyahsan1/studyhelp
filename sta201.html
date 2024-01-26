@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cse110.css">
+    <title>STA201</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan/studyhelp.git"><img src="./p/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>STA201</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>Elements of Statistics & Probability</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EqSn8zmIFtRHqkAtt9TRMMoBqCM5MnNJdLPqHW9lHMT1Ag?e=Hev3kr', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Graded Assignment Problems</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EglHXq5N2dJJiF0ogwhwdKMBaU_iA1re4l2ZvCMz6ovJPQ?e=oWrhlU', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Graded Assignment Solutions</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/ElQUrG5epdJKs0tnyUNnVSgBpD0L6tvRkk89NI2JiSfZUw?e=sCrCX1', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Graded Quiz</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EkalIF8e2nxJpLlqoZU5e_MB131swtzPbQGAud7SOD-Fqg?e=RIOcNe', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Mid Question</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EvhaSYwbv6NDg8sd9cqcqJYBhODGSD_YCT_3X2sU-eXwOw?e=wvngpx', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Class Recording of LFA</h3>
+        </div>
+    </div>
+    <!-- =============================================================================================================== -->
+
+
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>

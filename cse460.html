@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cse110.css">
+    <title>CSE460</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan/studyhelp.git"><img src="./p/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>CSE460</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>VLSI Design</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1vNttPqXJS-DhkdeSFkkPzN72NNs-AQi2?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Theory Assignments</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1xQZ6p3__ehEslslUBZuFJD9CR8Pweios?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Assesments</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/16_e_kjtj12M479yX4psLI2JOQOFd79g1?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Quiz</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/18g_ZpxzACj5z92fixP8jqncLc7J1pOpc?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Hand Notes</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1zuD8xzpPX5kbrB7rNW2nLG3lYVsNhsRP?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Slides and Videos</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1dTvAzhrRVIJQ0izuQOdwwh1Cb77o-k_Q?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Final Exam</h3>
+        </div>
+    </div>
+
+    <!-- =============================================================================================================== -->
+
+
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>
