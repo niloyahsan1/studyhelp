@@ -17,7 +17,7 @@ Welcome to the Study Help Resource Hub! This hub is a collection of resources fo
 ## Website Preview
 
 <p align = "center">
-<img src="https://github.com/niloyahsan/StudyHelp/assets/135329873/1b5a5eb1-7711-4205-ad52-cae304205a7a" alt="Study Help Website Preview" width="800">
+<img src="https://github.com/niloyahsan1/studyhelp/assets/157811017/8eb557bc-2bf3-4eec-9430-eb3846fbf817" alt="Study Help Website Preview" width="800">
 </p>
 
 ## Feedback
