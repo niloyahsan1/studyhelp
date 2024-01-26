@@ -7,7 +7,7 @@ Welcome to the Study Help Resource Hub! This hub is a collection of resources fo
 - **University:** BRAC University
 - **Purpose:** Provide resources and materials for junior students
 - **Courses:** All the courses which I have completed and BRACU offers
-- **Website:** [Study Help Website](https://niloyahsan.github.io/studyhelp/)
+- **Website:** [Study Help Website](https://niloyahsan1.github.io/studyhelp/)
 
 ## Contents
 
