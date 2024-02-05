@@ -22,6 +22,6 @@ Welcome to the Study Help Resource Hub! This hub is a collection of resources fo
 
 ## Feedback
 
-If you have any suggestions, feedback, or issues, please [open an issue](https://github.com/niloyahsan/StudyHelp/issues) on this resource hub.
+If you have any suggestions, feedback, or issues, please [open an issue](https://github.com/niloyahsan1/studyhelp/issues) on this resource hub.
 
 Happy studying!
