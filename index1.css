@@ -80,6 +80,48 @@ header nav ul li a {
   text-decoration: none;
 }
 
+/* CSS for the prompt div */
+.prompt {
+  background: linear-gradient(0deg, #274653, #60727c);
+  color: #9dff70;
+  font-size: 30px;
+  padding: 40px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  animation: pulse 2s infinite;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.prompt a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.prompt a:hover {
+  color: #ff9900;
+  text-shadow: 0 0 5px rgba(255, 153, 0, 0.8), 0 0 10px rgba(255, 153, 0, 0.8);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(36, 63, 77, 0.5), 0 0 15px rgba(163, 187, 200, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(36, 63, 77, 0.7),
+      0 0 30px rgba(163, 187, 200, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(36, 63, 77, 0.5), 0 0 15px rgba(163, 187, 200, 0.5);
+  }
+}
+/* CSS for the prompt div */
+
 button {
   letter-spacing: 2px;
   font-size: 18px;
