@@ -1,5 +1,5 @@
-var lightMode = "../css/index2.css";
-var darkMode = "../css/index1.css";
+var lightMode = "./css/index1.css";
+var darkMode = "./css/index2.css";
 var isLightMode = true;
 
 function css_switch() {
