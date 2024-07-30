@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cse110.css">
+    <link rel="website icon" type="png" href="../image/470-logo.png">
+    <title>CSE470</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="../image/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>CSE470</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>Software Engineering</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1IjQejoxLoavMYUbJpgsr1GifniyIGTe3?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Assignment</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1jW5Z0KbC085pIHGwC0PTHUwhKs_qfZE1?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Project</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1tdAIR8GI4s6bb2xmm03BxM7-fgyXS_7h?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Hand Notes</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1omMXE-ThLDXFVdMOruWXJWP4729vmmq6?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Quiz</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1zDM2Uvnd68iBbaxVoE8lLR7godATkeYj?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Mid Exam</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1Jx1dYFBkAhD6bR5udaH9ZhmmamKQzo-b?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Final Exam</h3>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://youtu.be/1GOtAcZGxuc', '_blank')">
+            <span class="folder-icon">&#9654;</span>
+            <h3>ANT Code Smell (YT)</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://youtu.be/vfeynPOHTRc', '_blank')">
+            <span class="folder-icon">&#9654;</span>
+            <h3>ANT SIX Value (YT)</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://youtu.be/vfeynPOHTRc', '_blank')">
+            <span class="folder-icon">&#9654;</span>
+            <h3>ANT Cyclomatic Complexity (YT)</h3>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://youtu.be/XgsehrfFZA0?si=zXAzsLFC_UBbwbn', '_blank')">
+            <span class="folder-icon">&#9654;</span>
+            <h3>ANT GitHub (YT)</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://youtube.com/playlist?list=PLr9he3UyIy3nisK-tpSQtl7GBBs7NvKwr&si=scn_qLa1_7i-N5g4', '_blank')">
+            <span class="folder-icon">&#127909;</span>
+            <h3>MSI YouTube Playlist</h3>
+        </div>
+    </div>
+
+    <!-- =============================================================================================================== -->
+
+
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="../js/header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>

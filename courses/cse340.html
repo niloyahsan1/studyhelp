@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cse110.css">
+    <link rel="website icon" type="png" href="../image/arci-logo.jpg">
+    <title>CSE340</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="../image/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>CSE340</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>Computer Architecture</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1dihqa9Bh5F3a2DpyLoTi423f0iJMGlDY?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Assignments</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1a8NApq7kX4IwqSwKho3cXN80r4A9dKMM?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Quiz</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1wSmsAaMrXFTTGcJyhr0L0uOfWNopqyTY?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Hand Notes</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1RTO-LgwUcetfNkTZL6kYwDVKqmgrHVHs?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>For Practise</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1fOY42bOl42stezIfRYUTbi2HzUTw1CGp?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Mid Exam</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1OTZBo3FhLo0PId8J3wrrV74sxEIjn9KI?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Final Exam</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1Ffh8bv2MC_p5VH9YU9Tle9nmJciQgmLg?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>FNK Slides and YouTube Playlists</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://youtube.com/playlist?list=PLKyFAP_ydM15Rvaw9HBNF4WOrtAtt8M-w&si=5r5tqxBQMTRgC50s', '_blank')">
+            <span class="folder-icon">&#127909;</span>
+            <h3>PBK Ch-2,3 YouTube Playlist</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://youtube.com/playlist?list=PLKyFAP_ydM17VPOp58yPMBTWkG8__Kwg7&si=2Yw0T80a5pamTZQP', '_blank')">
+            <span class="folder-icon">&#127909;</span>
+            <h3>PBK Ch-4 YouTube Playlist</h3>
+        </div>
+    </div>
+    <!-- =============================================================================================================== -->
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="../js/header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>

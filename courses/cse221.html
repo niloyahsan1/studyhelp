@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cse110.css">
+    <link rel="website icon" type="png" href="../image/py-logo.png">
+    <title>CSE221</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="../image/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>CSE221</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>Introduction to Algorithms</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+
+    <!-- ======================================  Main Content  ====================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EpodcUPSky1AhuS-CNF1Dq8BzF9x4td4zgRHPhVtI7sH4A?e=dyf4Ss', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Questions</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EoREUxBs9BVCrxXxkfFqWvYBbbMtFlYU7iJUzEA1xT4pjw?e=yLzAPe', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Assignments</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EhvnX9RESjhLsxGrtEfCAu8B7655PsXZrz7gVT-R3OX-4A?e=KpCfGk', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Theory Assignment</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EoH0upfE6plClvbfUyNOMF4Be-yZ3ivCF98aA5tqddzEjw?e=hJUZbQ', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Worksheets</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EkrpsRsgz1FJiMUC1YL4VlUBupTTSnwSQwMkd4jsU0vl-Q?e=DOKJ09', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Mid Exam</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/En8WzhvEjYlMhYl79Eq8-ZABu7_3PLjD3DYStBxmI6xNjA?e=T4zYp1', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Final Exam</h3>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EgqDDlT_PHBKm2eGngU36WABXSczez3DPxXRNroWNgS_qg?e=Un5P6M', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Slides</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EutMcAmkEUdPiKd7AL9-QDkBA9kmNd2TsxI5xL4GAGujtQ?e=TjSBsS', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Notes</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:b:/g/personal/niloy_ahsan_g_bracu_ac_bd/EQO_KqteVNNAu1T0xsV74nkB1dVrP8G2LR3_n8y3NxPhLA?e=lY8huZ', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Introduction to Algorithms <br> Book (PDF)</h3>
+        </div>
+    </div>
+    <!-- ======================================  Main Content  ====================================== -->
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+    <script src="../js/header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>

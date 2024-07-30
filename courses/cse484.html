@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cse110.css">
+    <link rel="website icon" type="png" href="../image/cc-logo.png">
+    <title>CSE484</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="../image/git.png" id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>CSE484</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>Cloud Computing</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1zNpksRjZouwSi7VqYMBxuSuA8zdLBsck?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Assignments</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1Mlb8CnZggJ7VPbrU0zZNmndN6x4xxQgk?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Lab Activities</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/154ZMRbqIhRn9hErX9kylB_ZUwgDweHBP?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Paper Presentation</h3>
+        </div>
+    </div>
+
+
+    <div class="button-container">
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/12vvKm1PwiL7lRuCJceU9oa00ZhBxVcg1?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Comparative Analysis Paper</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1mrzHEbZ3hSMwfmIMp_vDu5i3_DJklW5H?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Slides by JNM</h3>
+        </div>
+
+        <div class="folder-box" onclick="openFolder('https://sites.google.com/site/jannatun0abigzero/home', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Jannatun Noor (JNM) Site</h3>
+        </div>
+    </div>
+
+    <!-- =============================================================================================================== -->
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="../js/header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>
