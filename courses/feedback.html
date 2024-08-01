@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cse110.css">
+    <!-- <link rel="website icon" type="png" href="../image/ckt-logo.png"> -->
+    <title>feedback</title>
+</head>
+
+<body>
+
+    <!-- =================  Page Loader  ================  -->
+    <div class="loader"></div>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
+    <!-- =================  Page Loader  ================  -->
+
+
+    <!-- =================  GitHub Logo  ================  -->
+    <div id="git_link">
+        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="../image/git.png"
+                id="github"></a>
+    </div>
+    <!-- =================  GitHub Logo  ================  -->
+
+
+    <!-- =================  header  ================  -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- =================  header  ================  -->
+
+
+    <div id=header class="h1-con">
+        <h1>Feedback Form</h1>
+    </div>
+
+    <div class="h2-con">
+        <h2>We'd love to have your feedback!</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- =============================================================================================================== -->
+    <div class="form-container">
+        <!-- Width and Height is maintained in CSS -->
+        <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSetkrplTB_BD6V0hCKmxr4WvDzp_no_xFv6CCGJ6dzuptAuFA/viewform?embedded=true"
+            width="640" height="1294" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+    <!-- =============================================================================================================== -->
+
+
+
+
+    <!-- ========  footer  ================ -->
+    <div class="extra-space"></div>
+
+    <div class="footer">
+        <p>niloy.ahsan@g.bracu.ac.bd</p>
+        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+    </div>
+    <!-- ========  footer  ================ -->
+
+
+
+    <script src="../js/header scroll.js"></script>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+</body>
+
+</html>

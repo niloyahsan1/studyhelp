@@ -81,6 +81,7 @@ header nav ul li a {
     text-decoration: none;
 }
 
+/* prompt animation change hobe */
 .prompt {
     background: linear-gradient(0deg, #274653, #60727c);
     color: #9dff70;
@@ -105,19 +106,47 @@ header nav ul li a {
     text-shadow: 0 0 5px rgba(255, 153, 0, 0.8), 0 0 10px rgba(255, 153, 0, 0.8);
 }
 
+/* feedback animation change hobe */
+.feedback {
+    background: linear-gradient(0deg, #274653, #60727c);
+    color: #9dff70;
+    font-size: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    animation: pulse 5s infinite;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.feedback a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.feedback a:hover {
+    color: #ff9900;
+    text-shadow: 0 0 5px rgba(255, 153, 0, 0.8), 0 0 10px rgba(255, 153, 0, 0.8);
+}
+
+/* animation for both feedback and prompt */
+/* should be change each time */
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(0.92);
         box-shadow: 0 0 5px rgba(36, 63, 77, 0.5),
             0 0 15px rgba(163, 187, 200, 0.5);
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(1);
         box-shadow: 0 0 10px rgba(36, 63, 77, 0.7),
             0 0 30px rgba(163, 187, 200, 0.7);
     }
     100% {
-        transform: scale(1);
+        transform: scale(0.92);
         box-shadow: 0 0 5px rgba(36, 63, 77, 0.5),
             0 0 15px rgba(163, 187, 200, 0.5);
     }
@@ -254,25 +283,16 @@ h3 {
         height: 28px;
         font-size: 16px;
     }
-}
-
-@media screen and (max-width: 768px) {
     h1 {
         font-size: 60px;
         margin-top: 40px;
         margin-bottom: 100px;
     }
-}
-
-@media screen and (max-width: 768px) {
     h2 {
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;
     }
-}
-
-@media screen and (max-width: 768px) {
     .footer {
         padding: 10px;
     }

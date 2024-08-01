@@ -162,6 +162,20 @@ h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+iframe {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    width: 100%;
+    max-width: 640px;
+    height: 1500px;
+}
+
+.form-container {
+    background-color: #d1cebc;
+    padding: 20px;
+}
+
 .space {
     display: flex;
     align-items: center;
@@ -213,17 +227,15 @@ h3 {
         margin-top: 80px;
         margin-bottom: 80px;
     }
-}
-
-@media screen and (max-width: 768px) {
     h2 {
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;
     }
-}
-
-@media screen and (max-width: 768px) {
+    iframe {
+        width: 100%;
+        height: auto;
+    }
     .footer {
         padding: 10px;
     }
