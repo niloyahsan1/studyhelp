@@ -6,28 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/cse110.css">
-    <link rel="website icon" type="png" href="../image/py-logo.png">
-    <title>CHE110</title>
+    <link rel="website icon" type="png" href="../image/eco-logo.png">
+    <title>ECO102</title>
 </head>
 
 <body>
 
-    <!-- =================  Custom Cursor  ================  -->
-    <div class="kursor"></div>
-    <script src="../js/cursor.js"></script>
-    <!-- =================  Custom Cursor  ================  -->
-
-
     <!-- =================  Page Loader  ================  -->
     <div class="loader"></div>
-    <script src="../js/page_loader.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.querySelector(".loader");
+            loader.classList.add("loader-hidden");
+            loader.addEventListener("transitioned", function () {
+                document.body.removeChild("loader");
+            })
+        })
+    </script>
     <!-- =================  Page Loader  ================  -->
-
-
-    <!-- =================  Scroll Bar  ================  -->
-    <div class="header_scroll"></div>
-    <script src="../js/header scroll.js"></script>
-    <!-- =================  Scroll Bar  ================  -->
 
 
     <!-- =================  GitHub Logo  ================  -->
@@ -38,11 +34,9 @@
     <!-- =================  GitHub Logo  ================  -->
 
 
-
     <!-- =================  Scroll Bar  ================  -->
     <div></div>
     <!-- =================  Scroll Bar  ================  -->
-
 
 
     <!-- =================  header  ================  -->
@@ -56,58 +50,61 @@
     <!-- =================  header  ================  -->
 
 
-
-    <!-- =================  header  ================  -->
     <div id=header class="h1-con">
-        <h1>CHE110</h1>
+        <h1>ECO102</h1>
     </div>
 
     <div class="h2-con">
-        <h2>Principles Of Chemistry</h2>
+        <h2>Introduction to Macroeconomics</h2>
     </div>
 
     <div class="space"></div>
     <div class="extra-space"></div>
-    <!-- =================  header  ================  -->
 
-
-
-    <!-- ====================================== Main Content ====================================== -->
+    <!-- =============================================================================================================== -->
     <div class="button-container">
         <div class="folder-box"
-            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/ErXs85jVJHhBqGyNvICLDGAB9LbEfp0eMluOhkx8Ii0TMg?e=BA67R4', '_blank')">
-            <span class="folder-icon">&#128193;</span>
-            <h3>Assignments</h3>
-        </div>
-
-        <div class="folder-box"
-            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EvmdoHLvCv9Ep4z7S-N_PzABlTvPZykga13yiGGcJNmgqA?e=CKOTTj', '_blank')">
+            onclick="openFolder('https://drive.google.com/drive/folders/198nSiEKyXTyl5YGrko_J889Fv38Xmga4?usp=drive_link', '_blank')">
             <span class="folder-icon">&#128193;</span>
             <h3>Slides</h3>
         </div>
 
         <div class="folder-box"
-            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/Eg06iPxdBdZPk2kQdeQroiMBGzOA4gkkY-aM6kAnXuCIqA?e=7dEIp5', '_blank')">
+            onclick="openFolder('https://drive.google.com/drive/folders/1cHfX1Clv_sVNemowgwtvteh_0N_SLCRp?usp=drive_link', '_blank')">
             <span class="folder-icon">&#128193;</span>
-            <h3>Maths</h3>
+            <h3>Hand Notes</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1aJCfXMrj7zCyYL37ao667AEywm0rm5w_?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Practice</h3>
         </div>
     </div>
 
 
     <div class="button-container">
         <div class="folder-box"
-            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/EqYg4OJTNdBDvMPmSwrQEQsBKuhQDriOunvA_YGJPDjZMw?e=IObiAR', '_blank')">
-            <span class="folder-icon">&#128193;</span>
-            <h3>Notes</h3>
-        </div>
-
-        <div class="folder-box"
-            onclick="openFolder('https://gbracuacbd-my.sharepoint.com/:f:/g/personal/niloy_ahsan_g_bracu_ac_bd/Egr0jELd7nRMg3R7t_FLLSEBGpnZfkAkmWCSW5Up9DmUIw?e=TNXQkN', '_blank')">
+            onclick="openFolder('https://drive.google.com/drive/folders/1gCdQjjbov0mQc0JpGWhlDq88Ir2LV5zE?usp=drive_link', '_blank')">
             <span class="folder-icon">&#128193;</span>
             <h3>Quiz</h3>
         </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/drive/folders/1PZxDIEVXW1Ef2_riv4cB_dm3KMTR_bDL?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Final Exam</h3>
+        </div>
+
+        <div class="folder-box"
+            onclick="openFolder('https://drive.google.com/file/d/1H5uuYEfG3xlCB_6lNCwyeQO7vt61U3Nt/view?usp=drive_link', '_blank')">
+            <span class="folder-icon">&#128193;</span>
+            <h3>Text Book</h3>
+        </div>
     </div>
-    <!-- ====================================== Main Content ====================================== -->
+
+    <!-- =============================================================================================================== -->
+
 
 
 
@@ -120,6 +117,9 @@
     </div>
     <!-- ========  footer  ================ -->
 
+
+
+    <script src="../js/header scroll.js"></script>
 
     <script>
         function openFolder(link, target) {

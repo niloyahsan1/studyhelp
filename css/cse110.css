@@ -2,6 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* cursor: none; */
+}
+
+.kursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: border-color 0.2s ease;
 }
 
 .loader {

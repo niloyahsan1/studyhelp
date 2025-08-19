@@ -7,40 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="stylesheet" rel="stylesheet" type="text/css" href="./css/index1.css">
     <link rel="website icon" type="png" href="./image/logo.png">
-    <script src="./js/header_scroll.js"></script>
     <script src="./js/mode.js"></script>
     <title>Home - Study Help</title>
 </head>
 
 <body>
-
+    
+    <!-- =================  Custom Cursor  ================  -->
+    <div class="kursor"></div>
+    <script src="./js/cursor.js"></script>
+    <!-- =================  Custom Cursor  ================  -->
+    
+    
     <!-- =================  Page Loader  ================  -->
     <div class="loader"></div>
-    <script>
-        window.addEventListener("load", function () {
-            const loader = document.querySelector(".loader");
-            loader.classList.add("loader-hidden");
-            loader.addEventListener("transitioned", function () {
-                document.body.removeChild("loader");
-            })
-        })
-    </script>
+    <script src="./js/page_loader.js"></script>
     <!-- =================  Page Loader  ================  -->
-
-
+    
+    
     <!-- =================  GitHub Logo  ================  -->
     <div id="git_link">
-        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="./image/git.png"
-                id="github"></a>
+        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="./image/git.png" id="github"></a>
     </div>
     <!-- =================  GitHub Logo  ================  -->
-
-
+    
+    
     <!-- =================  Scroll Bar  ================  -->
-    <div></div>
+    <div class="header_scroll"></div>
+    <script src="./js/header_scroll.js"></script>
     <!-- =================  Scroll Bar  ================  -->
-
-
+    
+    
     <!-- =================  header  ================  -->
     <header>
         <nav>
@@ -51,13 +48,13 @@
         </nav>
     </header>
     <!-- =================  header  ================  -->
-
-
+    
+    
     <div id=header class="h1-con">
         <h1>Welcome to Study Help</h1>
     </div>
-
-
+    
+    
     <!-- New Prompt Section -->
     <!-- <div class="prompt">
         <p><strong>New Courses Update:</strong> I have recently updated the following courses:
@@ -69,8 +66,8 @@
         </p>
     </div> -->
     <!-- New Prompt Section -->
-
-
+    
+    
     <!-- Upload Resources -->
     <div class="prompt">
         <p>
@@ -78,8 +75,8 @@
         </p>
     </div>
     <!-- Upload Resources -->
-
-
+    
+    
     <!-- New Feedback Section -->
     <div class="feedback">
         <p>
@@ -87,209 +84,213 @@
         </p>
     </div>
     <!-- New Feedback Section -->
-
-
+    
+    
     <div class="h2-con">
         <h2>COMPUTER SCIENCE & ENGINEERING (CSE)</h2>
     </div>
-
+    
     <!-- =============================================================================================================== -->
     <div class="button-container">
         <div class="folder-box" onclick="openFolder('./courses/cse110_py.html', '_blank')">
             <h3>CSE110: Programming Languages I [PYTHON]</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse110_java.html', '_blank')">
             <h3>CSE110: Programming Languages I [JAVA]</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse111.html', '_blank')">
             <h3>CSE111: Programming Languages II</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse220.html', '_blank')">
             <h3>CSE220: Data Structures</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse221.html', '_blank')">
             <h3>CSE221: Introduction to Algorithms</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse230.html', '_blank')">
             <h3>CSE230: Discrete Mathematics</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse250.html', '_blank')">
             <h3>CSE250: Circuits And Electronics</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse251.html', '_blank')">
             <h3>CSE251: Electronics Devices And Circuits</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse260.html', '_blank')">
             <h3>CSE260: Digital Logic Design</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse320.html', '_blank')">
             <h3>CSE320: Data Communications</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse321.html', '_blank')">
             <h3>CSE321: Operating Systems</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse330.html', '_blank')">
             <h3>CSE330: Numerical Methods</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse331.html', '_blank')">
             <h3>CSE331: Automata And Computability</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse340.html', '_blank')">
             <h3>CSE340: Computer Architecture</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse341.html', '_blank')">
             <h3>CSE341: Microprocessors</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse350.html', '_blank')">
             <h3>CSE350: Digital Electronics & Pulse Techniques</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse360.html', '_blank')">
             <h3>CSE360: Computer Interfacing</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse370.html', '_blank')">
             <h3>CSE370: Database Systems</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse420.html', '_blank')">
             <h3>CSE420: Compiler Design</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse421.html', '_blank')">
             <h3>CSE421: Computer Networks</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse422.html', '_blank')">
             <h3>CSE422: Artificial Intelligence</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse423.html', '_blank')">
             <h3>CSE423: Computer Graphics</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse460.html', '_blank')">
             <h3>CSE460: VLSI Design</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse461.html', '_blank')">
             <h3>CSE461: Introduction to Robotics</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse470.html', '_blank')">
             <h3>CSE470: Software Engineering</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/cse471.html', '_blank')">
             <h3>CSE471: System Analysis and Design</h3>
         </div>
     </div>
     <!-- =============================================================================================================== -->
-
+    
     <div class="h2-con">
         <h2>MATH & PHYSICS (MNS)</h2>
     </div>
-
+    
     <!-- =============================================================================================================== -->
     <div class="button-container">
         <div class="folder-box" onclick="openFolder('./courses/mat110.html', '_blank')">
             <h3>MAT110: Mathematics I</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/mat120.html', '_blank')">
             <h3>MAT120: Mathematics II</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/mat215.html', '_blank')">
             <h3>MAT215: Mathematics III</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/mat216.html', '_blank')">
             <h3>MAT216: Mathematics IV</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/phy111.html', '_blank')">
             <h3>PHY111: Principles of Physics I</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/phy112.html', '_blank')">
             <h3>PHY112: Principles of Physics II</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/sta201.html', '_blank')">
             <h3>STA201: Elements of Statistics And Probability</h3>
         </div>
     </div>
     <!-- =============================================================================================================== -->
-
+    
     <div class="h2-con">
         <h2>OTHERS (RS, ENG, COD, ELECTIVE)</h2>
     </div>
-
+    
     <!-- =============================================================================================================== -->
     <div class="button-container">
         <div class="folder-box" onclick="openFolder('./courses/hum103.html', '_blank')">
             <h3>HUM103: Ethics And Culture</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/emb101.html', '_blank')">
             <h3>EMB101: Emergence Of Bangladesh</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/courses/bng103.html', '_blank')">
             <h3>BNG101: Bangla Language and Literature</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/eng091.html', '_blank')">
             <h3>ENG091: English Foundation</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/eng101.html', '_blank')">
             <h3>ENG101: English Fundamentals</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/eng102.html', '_blank')">
             <h3>ENG102: English Composition I</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/che110.html', '_blank')">
             <h3>CHE110: Principles Of Chemistry</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/env103.html', '_blank')">
             <h3>ENV103: Elements of Environmental Sciences</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/eco101.html', '_blank')">
             <h3>ECO101: Introduction to Microeconomics</h3>
         </div>
-
+        
+        <div class="folder-box" onclick="openFolder('./courses/eco102.html', '_blank')">
+            <h3>ECO102: Introduction to Macroeconomics</h3>
+        </div>
+        
         <div class="folder-box" onclick="openFolder('./courses/cse484.html', '_blank')">
             <h3>CSE484: Cloud Computing</h3>
         </div>
-
+        
         <div class="folder-box" onclick="openFolder('./courses/chn101.html', '_blank')">
             <h3>CHN101: Chinese Language: Level One</h3>
         </div>
     </div>
     <!-- =============================================================================================================== -->
-
-
+    
+    
     <!-- New Feedback Section -->
     <div class="feedback">
         <p>
@@ -297,26 +298,9 @@
         </p>
     </div>
     <!-- New Feedback Section -->
-
-
+    
+    
     <!-- ========  footer  ================ -->
-    <style>
-        .social {
-            display: flex;
-            gap: 35px;
-            justify-content: center;
-        }
-
-        .social a {
-            display: inline-block;
-        }
-
-        .social img {
-            width: 30px;
-            height: 30px;
-        }
-    </style>
-
     <div class="social">
         <a href="https://www.messenger.com/t/100014394886198" target="_blank">
             <img src="./image/mlg.png" alt="Messenger">
@@ -337,16 +321,16 @@
 
     <div class="footer">
         <p>niloy.ahsan@g.bracu.ac.bd</p>
-        <p>&copy; 2024 | Implemented by Niloy Ahsan</p>
+        <p>&copy; 2025 | Implemented by Niloy Ahsan</p>
     </div>
-    <!-- ========  footer  ================ -->
+<!-- ========  footer  ================ -->
 
 
-    <script>
-        function openFolder(link, target) {
-            window.open(link, target);
-        }
-    </script>
+<script>
+    function openFolder(link, target) {
+        window.open(link, target);
+    }
+</script>
 
 </body>
 

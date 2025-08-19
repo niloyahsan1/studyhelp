@@ -12,22 +12,21 @@
 
 <body>
 
+    <!-- =================  Custom Cursor  ================  -->
+    <div class="kursor"></div>
+    <script src="../js/cursor.js"></script>
+    <!-- =================  Custom Cursor  ================  -->
+
+
     <!-- =================  Page Loader  ================  -->
     <div class="loader"></div>
-    <script>
-        window.addEventListener("load", function () {
-            const loader = document.querySelector(".loader");
-            loader.classList.add("loader-hidden");
-            loader.addEventListener("transitioned", function () {
-                document.body.removeChild("loader");
-            })
-        })
-    </script>
+    <script src="../js/page_loader.js"></script>
     <!-- =================  Page Loader  ================  -->
 
 
     <!-- =================  Scroll Bar  ================  -->
-    <div></div>
+    <div class="header_scroll"></div>
+    <script src="../js/header scroll.js"></script>
     <!-- =================  Scroll Bar  ================  -->
 
 
@@ -120,8 +119,6 @@
     </div>
     <!-- ========  footer  ================ -->
 
-
-    <script src="../js/header scroll.js"></script>
 
     <script>
         function openFolder(link, target) {
