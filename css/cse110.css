@@ -5,6 +5,26 @@
     /* cursor: none; */
 }
 
+.backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
 .kursor {
     position: fixed;
     top: 0;
