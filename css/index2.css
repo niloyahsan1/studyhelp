@@ -237,7 +237,32 @@ h1 {
     text-align: center;
     margin-top: 80px;
     margin-bottom: 180px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+
+    /* Shine gradient background for text */
+    background: linear-gradient(90deg, #a3bbc8 10%, #03425f 50%, #a3bbc8 90%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+
+    /* Clip background to text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+
+    animation: shine 10s linear infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position-x: 200%;
+    }
+
+    100% {
+        background-position-x: -200%;
+    }
 }
 
 .h1-con {
@@ -253,6 +278,7 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     color: #a3bbc8;
+    padding: 40px 0;
 }
 
 h2 {
