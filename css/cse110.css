@@ -277,26 +277,29 @@ iframe {
 }
 
 @media screen and (max-width: 768px) {
+    .folder-box {
+        width: 300px;
+        height: 28px;
+        font-size: 16px;
+    }
     h1 {
-        font-size: 40px;
-        margin-top: 80px;
-        margin-bottom: 80px;
+        font-size: 60px;
+        margin-top: 40px;
+        margin-bottom: 100px;
     }
     h2 {
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;
     }
-    iframe {
-        width: 100%;
-        height: auto;
-    }
     .footer {
         padding: 10px;
     }
-
     .footer p {
         font-size: 18px;
         margin: 10px;
+    }
+    .kursor {
+        display: none;
     }
 }
