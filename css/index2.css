@@ -5,6 +5,11 @@
     /* cursor: none; */
 }
 
+html,
+body {
+    height: 100%;
+    background-color: #1c1c1c;
+}
 .backToTop {
     position: fixed;
     bottom: 30px;
@@ -134,74 +139,53 @@ header nav ul li a {
     text-decoration: none;
 }
 
-/* prompt animation change hobe */
-.prompt {
+.feedback p,
+.prompt p {
     background: linear-gradient(0deg, #274653, #60727c);
     color: #9dff70;
-    font-size: 30px;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px;
+    font-size: 25px;
+    padding: 16px;
+    border-radius: 50px;
+    margin: 4px;
     text-align: center;
-    animation: pulse 2s infinite;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.prompt a {
-    color: #ffcc00;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-.prompt a:hover {
-    color: #ff9900;
-    text-shadow: 0 0 5px rgba(255, 153, 0, 0.8), 0 0 10px rgba(255, 153, 0, 0.8);
-}
-
-/* feedback animation change hobe */
-.feedback {
-    background: linear-gradient(0deg, #274653, #60727c);
-    color: #9dff70;
-    font-size: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 5px;
-    text-align: center;
-    animation: pulse 5s infinite;
     letter-spacing: 2px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.feedback a {
-    color: #ffcc00;
+.feedback a,
+.prompt a {
+    color: #9dff70;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s, text-shadow 0.3s;
+    position: relative;
+    animation: textGlow 2s ease-in-out infinite;
 }
 
-.feedback a:hover {
-    color: #ff9900;
-    text-shadow: 0 0 5px rgba(255, 153, 0, 0.8), 0 0 10px rgba(255, 153, 0, 0.8);
+.feedback a::after,
+.prompt a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #5cff11;
+    transition: width 0.3s ease;
 }
 
-/* animation for both feedback and prompt */
-/* should be change each time */
-@keyframes pulse {
+.feedback a:hover::after,
+.prompt a:hover::after {
+    width: 100%;
+}
+
+@keyframes textGlow {
     0% {
-        transform: scale(0.92);
-        box-shadow: 0 0 5px rgba(36, 63, 77, 0.5),
-            0 0 15px rgba(163, 187, 200, 0.5);
+        text-shadow: 0 0 5px #9dff70;
     }
     50% {
-        transform: scale(1);
-        box-shadow: 0 0 10px rgba(36, 63, 77, 0.7),
-            0 0 30px rgba(163, 187, 200, 0.7);
+        text-shadow: 0 0 10px #9dff70, 0 0 20px #9dff70;
     }
     100% {
-        transform: scale(0.92);
-        box-shadow: 0 0 5px rgba(36, 63, 77, 0.5),
-            0 0 15px rgba(163, 187, 200, 0.5);
+        text-shadow: 0 0 5px #9dff70;
     }
 }
 
@@ -272,11 +256,11 @@ h1 {
 }
 
 h2 {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-size: 26px;
     text-align: center;
-    margin-top: 36px;
-    margin-bottom: 36px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     color: #f0ece9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     animation: h1Glow 3s infinite alternate;
@@ -304,7 +288,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Poppins';
+    font-family: "Poppins";
     font-weight: normal;
     font-size: 15px;
     color: #a3bbc8;
@@ -384,13 +368,13 @@ h3 {
         font-size: 16px;
     }
     h1 {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-size: 60px;
         margin-top: 40px;
         margin-bottom: 100px;
     }
     h2 {
-        font-family: 'Poppins';
+        font-family: "Poppins";
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;
