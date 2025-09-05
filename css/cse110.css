@@ -200,14 +200,13 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     color: #f4f1de;
-    height:260px;
+    height: 260px;
 }
 
 h2 {
-    font-family: Courier;
-    font-size: 27px;
+    font-family: 'Poppins';    
+    font-size: 30px;
     text-align: center;
-    font-style: italic;
     margin-top: 36px;
     margin-bottom: 36px;
     color: #a3bbc8;
@@ -221,9 +220,10 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 19px;
     letter-spacing: 1px;
-    font: Sans-serif;
     color: #a3bbc8;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -293,7 +293,7 @@ iframe {
     transition: color 0.3s ease;
 }
 
-@keyframes glow {
+@keyframes footerglow {
     0% {
         text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
     }
@@ -306,7 +306,7 @@ iframe {
 }
 
 .footer a {
-    animation: glow 2s infinite alternate;
+    animation: footerglow 2s infinite alternate;
 }
 
 @media screen and (max-width: 768px) {
@@ -316,11 +316,13 @@ iframe {
         font-size: 16px;
     }
     h1 {
+        font-family: 'Poppins';
         font-size: 60px;
         margin-top: 40px;
         margin-bottom: 100px;
     }
     h2 {
+        font-family: 'Poppins';
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;

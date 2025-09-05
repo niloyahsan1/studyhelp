@@ -85,7 +85,6 @@
     text-align: center;
 }
 
-/* =============== scrollbar ======================== */
 .scrollbar {
     height: 200vh;
 }
@@ -103,7 +102,6 @@
     background-color: #ff0000;
     border-radius: 10px;
 }
-/* =============== scrollbar ======================== */
 
 header {
     background: linear-gradient(
@@ -274,13 +272,29 @@ h1 {
 }
 
 h2 {
-    /* font-family: Cav; */
-    font-size: 27px;
+    font-family: 'Poppins';
+    font-size: 26px;
     text-align: center;
     margin-top: 36px;
     margin-bottom: 36px;
     color: #f0ece9;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: h1Glow 3s infinite alternate;
+}
+
+@keyframes h1Glow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #f4f1de,
+            0 0 20px #f4f1de;
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 25px #fff8e1,
+            0 0 40px #fff8e1;
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #f4f1de,
+            0 0 20px #f4f1de;
+    }
 }
 
 .h2-con {
@@ -290,9 +304,10 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
-    color: #9fb8c5;
-    font: 1em Sans-serif;
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 15px;
+    color: #a3bbc8;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -330,7 +345,6 @@ h3 {
     background-color: #1d323e;
     padding: 20px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .footer p {
@@ -341,6 +355,28 @@ h3 {
     color: #ebe5c2;
 }
 
+.footer a {
+    color: #f4f1de;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+@keyframes footerglow {
+    0% {
+        text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffe29a, 0 0 20px #ffe29a, 0 0 30px #ffe29a;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
+    }
+}
+
+.footer a {
+    animation: footerglow 2s infinite alternate;
+}
+
 @media screen and (max-width: 768px) {
     .folder-box {
         width: 300px;
@@ -348,11 +384,13 @@ h3 {
         font-size: 16px;
     }
     h1 {
+        font-family: 'Poppins';
         font-size: 60px;
         margin-top: 40px;
         margin-bottom: 100px;
     }
     h2 {
+        font-family: 'Poppins';
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;

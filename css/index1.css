@@ -85,7 +85,6 @@
     text-align: center;
 }
 
-/* =============== scrollbar ======================== */
 .scrollbar {
     height: 200vh;
 }
@@ -103,7 +102,6 @@
     background-color: #ff0000;
     border-radius: 10px;
 }
-/* =============== scrollbar ======================== */
 
 header {
     background: linear-gradient(
@@ -274,12 +272,12 @@ h1 {
 }
 
 h2 {
-    /* font-family: Cav; */
-    font-size: 27px;
+    font-family: 'Poppins';
+    font-size: 26px;
     text-align: center;
     margin-top: 36px;
     margin-bottom: 36px;
-    color: #000000;
+    color: #002536;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -290,9 +288,10 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 15px;
     color: #a3bbc8;
-    font: 1em Sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -339,7 +338,6 @@ img:hover{
     background-color: #243f4d;
     padding: 20px;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .footer p {
@@ -350,6 +348,28 @@ img:hover{
     color: #f4f1de;
 }
 
+.footer a {
+    color: #f4f1de;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+@keyframes footerglow {
+    0% {
+        text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffe29a, 0 0 20px #ffe29a, 0 0 30px #ffe29a;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
+    }
+}
+
+.footer a {
+    animation: footerglow 2s infinite alternate;
+}
+
 @media screen and (max-width: 768px) {
     .folder-box {
         width: 300px;
@@ -357,11 +377,13 @@ img:hover{
         font-size: 16px;
     }
     h1 {
+        font-family: 'Poppins';
         font-size: 60px;
         margin-top: 40px;
         margin-bottom: 100px;
     }
     h2 {
+        font-family: 'Poppins';
         font-size: 20px;
         margin-top: 24px;
         margin-bottom: 24px;
