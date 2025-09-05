@@ -85,7 +85,6 @@
     text-align: center;
 }
 
-/* =============== scrollbar ======================== */
 .scrollbar {
     height: 200vh;
 }
@@ -103,7 +102,6 @@
     background-color: #ff0000;
     border-radius: 10px;
 }
-/* =============== scrollbar ======================== */
 
 header {
     background: linear-gradient(
@@ -175,21 +173,34 @@ h1 {
     margin-top: 130px;
     margin-bottom: 130px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: h1Glow 3s infinite alternate;
+}
+@keyframes h1Glow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #f4f1de,
+            0 0 20px #f4f1de;
+    }
+    50% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 25px #fff8e1,
+            0 0 40px #fff8e1;
+    }
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px #f4f1de,
+            0 0 20px #f4f1de;
+    }
 }
 
 .h1-con {
     display: flex;
     justify-content: center;
-    background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.5) 50%,
-            rgba(0, 0, 0, 0.5) 50%
-        ),
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(../image/cover.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #f4f1de;
+    height:260px;
 }
 
 h2 {
@@ -274,6 +285,28 @@ iframe {
     font: Arial;
     text-align: center;
     color: #f4f1de;
+}
+
+.footer a {
+    color: #f4f1de;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffe29a, 0 0 20px #ffe29a, 0 0 30px #ffe29a;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffcc70, 0 0 10px #ffcc70, 0 0 15px #ffcc70;
+    }
+}
+
+.footer a {
+    animation: glow 2s infinite alternate;
 }
 
 @media screen and (max-width: 768px) {
