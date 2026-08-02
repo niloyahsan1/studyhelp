@@ -7,7 +7,7 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     background-color: #243f4d;
 }
 .backToTop {
@@ -30,19 +30,6 @@ body {
     color: #ffffff;
 }
 
-.kursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #ffffff;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    transition: border-color 0.2s ease;
-}
 
 .loader {
     background-color: black;
@@ -99,13 +86,18 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.553);
+    background-color: #1a2b35;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #ff0000;
+    background: linear-gradient(180deg, #00d2ff 0%, #3a7bd5 100%);
     border-radius: 10px;
+    border: 2px solid #1a2b35;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00f2fe 0%, #4facfe 100%);
 }
 
 header {
@@ -418,7 +410,24 @@ h3 {
         font-size: 18px;
         margin: 10px;
     }
-    .kursor {
-        display: none;
-    }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

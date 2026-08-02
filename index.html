@@ -11,51 +11,12 @@
     <link rel="website icon" type="png" href="./image/logo.png">
     <script src="./js/mode.js"></script>
     <title>Home - Study Help</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
 </head>
 
 <body>
     
-    <!-- =================  Back to Top Button  ================  -->
-    <button class="backToTop"><i class="fa fa-arrow-up"></i></button>
-    <script src="./js/backToTop.js"></script>
-    <!-- =================  Back to Top Button  ================  -->
-
-
-    <!-- =================  Custom Cursor  ================  -->
-    <div class="kursor"></div>
-    <script src="./js/cursor.js"></script>
-    <!-- =================  Custom Cursor  ================  -->
-    
-    
-    <!-- =================  Page Loader  ================  -->
-    <div class="loader"></div>
-    <script src="./js/page_loader.js"></script>
-    <!-- =================  Page Loader  ================  -->
-    
-    
-    <!-- =================  GitHub Logo  ================  -->
-    <div id="git_link">
-        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="./image/git.png" id="github"></a>
-    </div>
-    <!-- =================  GitHub Logo  ================  -->
-    
-    
-    <!-- =================  Scroll Bar  ================  -->
-    <div class="header_scroll"></div>
-    <script src="./js/header_scroll.js"></script>
-    <!-- =================  Scroll Bar  ================  -->
-    
-    
-    <!-- =================  header  ================  -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <button onclick="css_switch()">Light/Dark</button>
-            </ul>
-        </nav>
-    </header>
-    <!-- =================  header  ================  -->
+    <div id="header-component" data-is-home="true"></div>
     
     
     <div id=header class="h1-con">
@@ -331,10 +292,7 @@
         </a>
     </div>
 
-    <div class="footer">
-        <p>niloyahsan.official@gmail.com</p>
-        <p>&copy; 2025 | Implemented by <a href="#" target="_blank">Niloy Ahsan</a></p>
-    </div>
+    <div id="footer-component"></div>
 <!-- ========  footer  ================ -->
 
 
@@ -344,6 +302,9 @@
     }
 </script>
 
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="./js/lenis_init.js"></script>
+    <script src="./js/components.js"></script>
 </body>
 
 </html>

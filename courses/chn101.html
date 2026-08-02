@@ -10,51 +10,12 @@
     <link rel="stylesheet" href="../css/cse110.css">
     <link rel="website icon" type="png" href="../image/chn-logo.png">
     <title>CHN101</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
 </head>
 
 <body>    
 
-    <!-- =================  Back to Top Button  ================  -->
-    <button class="backToTop"><i class="fa fa-arrow-up"></i></button>
-    <script src="../js/backToTop.js"></script>
-    <!-- =================  Back to Top Button  ================  -->
-
-
-    <!-- =================  Custom Cursor  ================  -->
-    <div class="kursor"></div>
-    <script src="../js/cursor.js"></script>
-    <!-- =================  Custom Cursor  ================  -->
-
-
-    <!-- =================  Page Loader  ================  -->
-    <div class="loader"></div>
-    <script src="../js/page_loader.js"></script>
-    <!-- =================  Page Loader  ================  -->
-
-
-    <!-- =================  Scroll Bar  ================  -->
-    <div class="header_scroll"></div>
-    <script src="../js/header scroll.js"></script>
-    <!-- =================  Scroll Bar  ================  -->
-
-
-    <!-- =================  GitHub Logo  ================  -->
-    <div id="git_link">
-        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><img src="../image/git.png"
-                id="github"></a>
-    </div>
-    <!-- =================  GitHub Logo  ================  -->
-
-
-    <!-- =================  header  ================  -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- =================  header  ================  -->
+    <div id="header-component"></div>
 
 
     <!-- =================  header  ================  -->
@@ -113,10 +74,7 @@
     <!-- ========  footer  ================ -->
     <div class="extra-space"></div>
 
-    <div class="footer">
-        <p>niloyahsan.official@gmail.com</p>
-        <p>&copy; 2025 | Implemented by <a href="#" target="_blank">Niloy Ahsan</a></p>
-    </div>
+    <div id="footer-component"></div>
     <!-- ========  footer  ================ -->
 
 
@@ -125,6 +83,9 @@
             window.open(link, target);
         }
     </script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="../js/lenis_init.js"></script>
+    <script src="../js/components.js"></script>
 </body>
 
 </html>
