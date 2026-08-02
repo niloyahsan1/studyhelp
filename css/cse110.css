@@ -2,27 +2,67 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* cursor: none; */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #243f4d;
+}
+
+#header-component,
+main,
+.page-content {
+    width: 100%;
+}
+
+#footer-component {
+    margin-top: auto;
+    width: 100%;
 }
 
 .backToTop {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 35px;
-    height: 35px;
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid #ffffff;
+    width: 48px;
+    height: 48px;
+    background: rgba(15, 25, 35, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 210, 255, 0.4);
     border-radius: 50%;
-    font-size: 15px;
+    font-size: 18px;
     cursor: pointer;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-    padding: 0;
-    box-sizing: border-box;
+    color: #00d2ff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 210, 255, 0.2);
+    z-index: 9999;
+}
+
+.backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.backToTop:hover {
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5);
     color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 10px 28px rgba(0, 210, 255, 0.4), 0 0 20px rgba(58, 123, 213, 0.4);
+    transform: translateY(-3px) scale(1.05);
 }
 
 
@@ -252,6 +292,28 @@ iframe {
     width: 45%;
     height: 1px;
     background-color: #a3bbc8;
+}
+
+.exhtml {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #243f4d;
+}
+
+#header-component,
+main,
+.page-content {
+    width: 100%;
+}
+
+#footer-component {
+    margin-top: auto;
+    width: 100%;
 }
 
 .extra-space {
