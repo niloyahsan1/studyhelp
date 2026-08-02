@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load Header Component if element exists
     const headerContainer = document.getElementById("header-component");
     if (headerContainer) {
-        const isHomePage = headerContainer.hasAttribute("data-is-home");
-        const lightSwitchBtn = isHomePage ? '<button class="nav-btn" onclick="css_switch()" title="Toggle Theme"><i class="fa-solid fa-circle-half-stroke"></i></button>' : '';
+        const lightSwitchBtn = '<button class="nav-btn" onclick="css_switch()" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>';
         const logoImgPath = `${basePath}/image/logo.png`;
         const homePath = isSubDir ? `${basePath}/index.html` : 'index.html';
         const feedbackPath = isSubDir ? 'course.html?id=feedback' : './courses/course.html?id=feedback';
