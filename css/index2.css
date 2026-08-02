@@ -157,20 +157,24 @@ header nav ul li {
 
 header nav ul li a {
     letter-spacing: 2px;
-    font-size: 20px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    position: fixed;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     color: #f4f1de;
-    -webkit-text-stroke: 1px #f4f1de;
+    -webkit-text-stroke: 0.5px #f4f1de;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #00d2ff;
 }
 
 .feedback p,
 .prompt p {
     background: linear-gradient(0deg, #274653, #60727c);
     color: #9dff70;
-    font-size: 25px;
+    font-size: 22px;
     padding: 16px;
     border-radius: 50px;
     margin: 4px;
@@ -217,49 +221,50 @@ header nav ul li a {
 }
 
 button {
-    letter-spacing: 2px;
-    font-size: 18px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     color: #c5ab00;
-    -webkit-text-stroke: 0.8px #f4f1de;
+    -webkit-text-stroke: 0.5px #f4f1de;
     text-decoration: none;
     background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    color: #ffffff;
 }
 
 .folder-box {
     width: 360px;
-    height: 34px;
-    border: 1px solid #374f5b;
-    border-radius: 5px;
+    height: 38px;
+    border: 1px solid rgba(55, 79, 91, 0.7);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
-    margin: 30px 20px;
-    margin-top: 18px;
-    margin-bottom: 18px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+    margin: 18px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .folder-box:hover {
-    /* width: 368px;
-    height: 36px; */
-    transition: 0.3s ease;
     background-color: #344b57;
-    border: 1px solid rgb(54, 54, 54);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
 }
 
 .folder-box:hover h3 {
-    font-weight: bold;
-    color: #e8e6e3;
-    transition: 0.3s ease;
-}
-
-h1 {
+    font-weight: 600;
+    color: #ffffff;
+}h1 {
     font-size: 100px;
     text-align: center;
     margin-top: 80px;
@@ -341,11 +346,11 @@ h2 {
 }
 
 h3 {
-    font-family: "Poppins";
-    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     font-size: 15px;
     color: #a3bbc8;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
 }
 
 .button-container {
