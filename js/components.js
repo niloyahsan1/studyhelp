@@ -55,8 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (footerContainer) {
         footerContainer.innerHTML = `
     <div class="footer">
-        <p>niloyahsan.official@gmail.com</p>
-        <p>&copy; 2026 | Implemented by <a href="https://niloyahsan.is-a.dev" target="_blank">Niloy Ahsan</a></p>
+        <div class="footer-socials">
+            <a href="https://www.messenger.com/t/100014394886198" target="_blank" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
+            <a href="https://www.facebook.com/niloy.ahsan09/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ahsan_6.6/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:niloyahsan.official@gmail.com" target="_blank" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.youtube.com/@niloyahsan4641" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="footer-meta">
+            <p>&copy; 2026 | Implemented by <a href="https://niloyahsan.is-a.dev" target="_blank">Niloy Ahsan</a></p>
+        </div>
     </div>
 `;
     }

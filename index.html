@@ -15,16 +15,17 @@
 </head>
 
 <body>
-    
+
     <div id="header-component" data-is-home="true"></div>
-    
-    
+
+
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
             <h1>Welcome to Study Help</h1>
-            <p class="hero-subtitle">Access and share exam prep materials, notes, lab guides, and slides for BRAC University courses.</p>
-            
+            <p class="hero-subtitle">Access and share exam prep materials, notes, lab guides, and slides for BRAC
+                University courses.</p>
+
             <!-- Live Search Inside Hero -->
             <div class="search-container">
                 <i class="fa fa-search search-icon"></i>
@@ -42,10 +43,11 @@
                 <div class="cta-info">
                     <h3>Contribute Resources</h3>
                     <p>Share your slides, notes, or past papers to support other students.</p>
-                    <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank" class="cta-btn">Upload Resources</a>
+                    <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing"
+                        target="_blank" class="cta-btn">Upload Resources</a>
                 </div>
             </div>
-            
+
             <div class="cta-card feedback-card">
                 <div class="cta-icon"><i class="fa-solid fa-comment-dots"></i></div>
                 <div class="cta-info">
@@ -71,123 +73,102 @@
             <!-- Loaded dynamically by JS -->
         </div>
     </main>
-    
-    
-    <!-- ========  footer  ================ -->
-    <div class="social">
-        <a href="https://www.messenger.com/t/100014394886198" target="_blank">
-            <img src="./image/mlg.png" alt="Messenger">
-        </a>
-        <a href="https://www.facebook.com/niloy.ahsan09/" target="_blank">
-            <img src="./image/fblg.png" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/ahsan_6.6/" target="_blank">
-            <img src="./image/iglg.png" alt="Instagram">
-        </a>
-        <a href="mailto:niloyahsan.official@gmail.com" target="_blank">
-            <img src="./image/glg.png" alt="Email">
-        </a>
-        <a href="https://www.youtube.com/@niloyahsan4641" target="_blank">
-            <img src="./image/ylg.png" alt="youtube">
-        </a>
-    </div>
 
     <div id="footer-component"></div>
-<!-- ========  footer  ================ -->
 
 
-<script>
-    function openFolder(link, target) {
-        window.open(link, target);
-    }
-</script>
-<script src="./js/courses_data.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const searchInput = document.getElementById("course-search");
-        const tabButtons = document.querySelectorAll(".tab-btn");
-        
-        function getDepartment(key) {
-            const k = key.toLowerCase();
-            if (k.startsWith("cse")) return "cse";
-            if (k.startsWith("mat") || k.startsWith("phy") || k.startsWith("sta")) return "mns";
-            return "others";
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
         }
+    </script>
+    <script src="./js/courses_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("course-search");
+            const tabButtons = document.querySelectorAll(".tab-btn");
 
-        function renderCatalog() {
-            const query = searchInput.value.toLowerCase().trim();
-            const activeTab = document.querySelector(".tab-btn.active").getAttribute("data-filter");
-            
-            const cseContainer = [];
-            const mnsContainer = [];
-            const othersContainer = [];
-            
-            Object.keys(window.coursesData).forEach(key => {
-                const course = window.coursesData[key];
-                if (key === "feedback") return; // Skip feedback form
-                
-                const matchQuery = (course.title && course.title.toLowerCase().includes(query)) || 
-                                   (course.subtitle && course.subtitle.toLowerCase().includes(query)) ||
-                                   key.toLowerCase().includes(query);
-                                   
-                const dept = getDepartment(key);
-                const matchTab = (activeTab === "all" || activeTab === dept);
-                
-                if (matchQuery && matchTab) {
-                    const cardHTML = `
+            function getDepartment(key) {
+                const k = key.toLowerCase();
+                if (k.startsWith("cse")) return "cse";
+                if (k.startsWith("mat") || k.startsWith("phy") || k.startsWith("sta")) return "mns";
+                return "others";
+            }
+
+            function renderCatalog() {
+                const query = searchInput.value.toLowerCase().trim();
+                const activeTab = document.querySelector(".tab-btn.active").getAttribute("data-filter");
+
+                const cseContainer = [];
+                const mnsContainer = [];
+                const othersContainer = [];
+
+                Object.keys(window.coursesData).forEach(key => {
+                    const course = window.coursesData[key];
+                    if (key === "feedback") return; // Skip feedback form
+
+                    const matchQuery = (course.title && course.title.toLowerCase().includes(query)) ||
+                        (course.subtitle && course.subtitle.toLowerCase().includes(query)) ||
+                        key.toLowerCase().includes(query);
+
+                    const dept = getDepartment(key);
+                    const matchTab = (activeTab === "all" || activeTab === dept);
+
+                    if (matchQuery && matchTab) {
+                        const cardHTML = `
                     <div class="folder-box" onclick="openFolder('./courses/course.html?id=${key}', '_blank')">
                         <h3>${course.title}${course.subtitle ? ': ' + course.subtitle : ''}</h3>
                     </div>
                     `;
-                    if (dept === "cse") cseContainer.push(cardHTML);
-                    else if (dept === "mns") mnsContainer.push(cardHTML);
-                    else othersContainer.push(cardHTML);
-                }
-            });
-            
-            let catalogHTML = "";
-            
-            if (cseContainer.length > 0) {
-                catalogHTML += `
+                        if (dept === "cse") cseContainer.push(cardHTML);
+                        else if (dept === "mns") mnsContainer.push(cardHTML);
+                        else othersContainer.push(cardHTML);
+                    }
+                });
+
+                let catalogHTML = "";
+
+                if (cseContainer.length > 0) {
+                    catalogHTML += `
                 <div class="h2-con"><h2>COMPUTER SCIENCE & ENGINEERING (CSE)</h2></div>
                 <div class="button-container">${cseContainer.join("")}</div>
                 `;
-            }
-            if (mnsContainer.length > 0) {
-                catalogHTML += `
+                }
+                if (mnsContainer.length > 0) {
+                    catalogHTML += `
                 <div class="h2-con"><h2>MATH & PHYSICS (MNS)</h2></div>
                 <div class="button-container">${mnsContainer.join("")}</div>
                 `;
-            }
-            if (othersContainer.length > 0) {
-                catalogHTML += `
+                }
+                if (othersContainer.length > 0) {
+                    catalogHTML += `
                 <div class="h2-con"><h2>OTHERS (RS, ENG, COD, ELECTIVE)</h2></div>
                 <div class="button-container">${othersContainer.join("")}</div>
                 `;
+                }
+
+                if (catalogHTML === "") {
+                    catalogHTML = `<div style="text-align: center; color: #a3bbc8; font-size: 18px; margin: 80px 0; width: 100%; font-family: 'Poppins', sans-serif;">No matching courses found.</div>`;
+                }
+
+                document.getElementById("course-catalog-grid").innerHTML = catalogHTML;
             }
-            
-            if (catalogHTML === "") {
-                catalogHTML = `<div style="text-align: center; color: #a3bbc8; font-size: 18px; margin: 80px 0; width: 100%; font-family: 'Poppins', sans-serif;">No matching courses found.</div>`;
+
+            if (searchInput) {
+                searchInput.addEventListener("input", renderCatalog);
             }
-            
-            document.getElementById("course-catalog-grid").innerHTML = catalogHTML;
-        }
-        
-        if (searchInput) {
-            searchInput.addEventListener("input", renderCatalog);
-        }
-        
-        tabButtons.forEach(btn => {
-            btn.addEventListener("click", function () {
-                tabButtons.forEach(b => b.classList.remove("active"));
-                this.classList.add("active");
-                renderCatalog();
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    tabButtons.forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                    renderCatalog();
+                });
             });
+
+            renderCatalog();
         });
-        
-        renderCatalog();
-    });
-</script>
+    </script>
 
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script src="./js/lenis_init.js"></script>
