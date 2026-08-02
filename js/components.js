@@ -6,9 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerContainer = document.getElementById("header-component");
     if (headerContainer) {
         const isHomePage = headerContainer.hasAttribute("data-is-home");
-        const lightSwitchBtn = isHomePage ? '<button onclick="css_switch()">Light/Dark</button>' : '';
-        const gitImgPath = `${basePath}/image/git.png`;
+        const lightSwitchBtn = isHomePage ? '<button class="nav-btn" onclick="css_switch()" title="Toggle Theme"><i class="fa-solid fa-circle-half-stroke"></i></button>' : '';
+        const logoImgPath = `${basePath}/image/logo.png`;
         const homePath = isSubDir ? `${basePath}/index.html` : 'index.html';
+        const feedbackPath = isSubDir ? 'course.html?id=feedback' : './courses/course.html?id=feedback';
 
         headerContainer.innerHTML = `
     <!-- Back to Top Button -->
@@ -17,23 +18,29 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Page Loader -->
     <div class="loader"></div>
 
-    <!-- GitHub Logo -->
-    <div id="git_link">
-        <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank">
-            <img src="${gitImgPath}" id="github" alt="GitHub">
-        </a>
-    </div>
-
     <!-- Scroll Bar -->
     <div class="header_scroll"></div>
 
-    <!-- Header Navigation -->
+    <!-- Header Navigation Bar -->
     <header>
         <nav>
-            <ul>
+            <a href="${homePath}" class="nav-logo">
+                <img src="${logoImgPath}" alt="Logo" class="logo-img">
+                <span>Study Help</span>
+            </a>
+            
+            <ul class="nav-links">
                 <li><a href="${homePath}">Home</a></li>
-                ${lightSwitchBtn}
+                <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute</a></li>
+                <li><a href="${feedbackPath}">Feedback</a></li>
             </ul>
+
+            <div class="nav-actions">
+                ${lightSwitchBtn}
+                <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank" class="nav-btn" title="GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </nav>
     </header>
 `;
