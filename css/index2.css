@@ -52,6 +52,7 @@ body {
         transform: translateY(16px);
         filter: blur(4px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -655,13 +656,16 @@ button {
         padding: 24px;
         text-align: center;
     }
+
     .community-info {
         text-align: center;
         max-width: 100%;
     }
+
     .community-actions {
         justify-content: center;
     }
+
     .community-btn {
         width: 100%;
         justify-content: center;
@@ -1216,16 +1220,20 @@ html.lenis body {
     .hero-btn {
         width: 100%;
     }
+
     .landing-section-title {
         font-size: 22px;
     }
+
     .stats-panel {
         flex-direction: column;
         gap: 25px;
     }
+
     .catalog-hero-content h1 {
         font-size: 28px;
     }
+
     .catalog-hero-content p {
         font-size: 14px;
     }
@@ -1258,12 +1266,19 @@ html.lenis body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-8px);
     }
+
     60% {
         transform: translateY(-4px);
     }
@@ -1275,10 +1290,10 @@ html.lenis body {
         transform: translate(-50%, 16px);
         filter: blur(4px);
     }
+
     to {
         opacity: 1;
         transform: translate(-50%, 0);
         filter: blur(0);
     }
 }
-

@@ -78,6 +78,7 @@ body {
         transform: translateY(16px);
         filter: blur(4px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

@@ -32,10 +32,11 @@
             <!-- Hero Action Buttons -->
             <div class="hero-actions">
                 <a href="catalog.html" class="hero-btn primary">Explore All Courses</a>
-                <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank" class="hero-btn secondary">Contribute Files</a>
+                <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing"
+                    target="_blank" class="hero-btn secondary">Contribute Files</a>
             </div>
         </div>
-        
+
         <!-- Scroll Down Indicator -->
         <div class="scroll-indicator">
             <span>Scroll to explore</span>
@@ -112,12 +113,10 @@
     <script>
         // Animate a number counting up from 0
         function animateCount(el, target, suffix, duration) {
-            let start = 0;
             const startTime = performance.now();
             function step(now) {
                 const elapsed = now - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                // Ease out quad
                 const eased = 1 - (1 - progress) * (1 - progress);
                 const current = Math.floor(eased * target);
                 el.textContent = current + suffix;
@@ -127,20 +126,30 @@
         }
 
         document.addEventListener("DOMContentLoaded", function () {
-            if (window.coursesData) {
-                const keys = Object.keys(window.coursesData);
-                const courseKeys = keys.filter(k => k !== "feedback");
-                // Round down to nearest 10
-                const coursesRounded = Math.floor(courseKeys.length / 10) * 10;
+            const statsSection = document.querySelector(".stats-section");
+            if (!statsSection || !window.coursesData) return;
 
-                const coursesEl = document.getElementById("stat-courses");
-                const deptsEl = document.getElementById("stat-departments");
-                const freeEl = document.getElementById("stat-free");
+            const keys = Object.keys(window.coursesData);
+            const courseKeys = keys.filter(k => k !== "feedback");
+            const coursesRounded = Math.floor(courseKeys.length / 10) * 10;
 
-                if (coursesEl) animateCount(coursesEl, coursesRounded, "+", 1500);
-                if (freeEl) animateCount(freeEl, 100, "%", 1500);
-                if (deptsEl) animateCount(deptsEl, 3, "", 1500);
-            }
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        const coursesEl = document.getElementById("stat-courses");
+                        const freeEl = document.getElementById("stat-free");
+                        const deptsEl = document.getElementById("stat-departments");
+
+                        if (coursesEl) animateCount(coursesEl, coursesRounded, "+", 1500);
+                        if (freeEl) animateCount(freeEl, 100, "%", 1500);
+                        if (deptsEl) animateCount(deptsEl, 3, "", 1500);
+
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(statsSection);
         });
     </script>
 
