@@ -60,28 +60,33 @@ body {
     }
 }
 
-.hero-content h1 {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+.hero-content h1,
+.hero-title {
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-subtitle {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.1s;
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both 0.15s;
+}
+
+.hero-actions {
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both 0.3s;
 }
 
 .search-container {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.2s;
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both 0.2s;
 }
 
 .filter-tabs-container {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.3s;
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both 0.3s;
 }
 
 #course-catalog-grid {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.4s;
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both 0.4s;
 }
 
 .cta-grid {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both 0.5s;
+    animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) both 0.5s;
 }
 
 #header-component,
@@ -486,27 +491,22 @@ button {
 
 .hero-title {
     font-family: 'Poppins', sans-serif;
-    text-align: center;
-    margin: 0 0 25px 0;
-}
-
-.title-top {
-    display: block;
-    font-size: 38px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.title-bottom {
-    display: block;
-    font-size: 96px;
+    font-size: 100px;
     font-weight: 800;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0 0 30px 0;
+    line-height: 1.1;
+    letter-spacing: -3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.title-line {
+    display: block;
+}
+
+.hero-title .accent-text {
     color: var(--accent);
-    line-height: 1.0;
-    letter-spacing: -2px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .hero-subtitle {
@@ -920,14 +920,10 @@ img:hover{
         padding: 12px 16px;
     }
 
-    .title-top {
-        font-size: 24px;
-        margin-bottom: 6px;
-    }
-
-    .title-bottom {
-        font-size: 52px;
-        letter-spacing: -1px;
+    .hero-title {
+        font-size: 48px;
+        letter-spacing: -1.5px;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
