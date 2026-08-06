@@ -71,15 +71,15 @@
         <section class="stats-section">
             <div class="stats-panel">
                 <div class="stat-item">
-                    <span class="stat-number">30+</span>
+                    <span class="stat-number" id="stat-courses">0</span>
                     <span class="stat-label">Active Courses</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">100%</span>
+                    <span class="stat-number" id="stat-free">0</span>
                     <span class="stat-label">Free Access</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">3</span>
+                    <span class="stat-number" id="stat-departments">0</span>
                     <span class="stat-label">Departments</span>
                 </div>
             </div>
@@ -108,8 +108,40 @@
     <div id="footer-component"></div>
 
 
+    <script src="./js/courses_data.js"></script>
     <script>
-        // No search element on this page
+        // Animate a number counting up from 0
+        function animateCount(el, target, suffix, duration) {
+            let start = 0;
+            const startTime = performance.now();
+            function step(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out quad
+                const eased = 1 - (1 - progress) * (1 - progress);
+                const current = Math.floor(eased * target);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (window.coursesData) {
+                const keys = Object.keys(window.coursesData);
+                const courseKeys = keys.filter(k => k !== "feedback");
+                // Round down to nearest 10
+                const coursesRounded = Math.floor(courseKeys.length / 10) * 10;
+
+                const coursesEl = document.getElementById("stat-courses");
+                const deptsEl = document.getElementById("stat-departments");
+                const freeEl = document.getElementById("stat-free");
+
+                if (coursesEl) animateCount(coursesEl, coursesRounded, "+", 1500);
+                if (freeEl) animateCount(freeEl, 100, "%", 1500);
+                if (deptsEl) animateCount(deptsEl, 3, "", 1500);
+            }
+        });
     </script>
 
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
