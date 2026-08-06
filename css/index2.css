@@ -466,20 +466,25 @@ button {
 }
 
 .hero-section {
+    position: relative;
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
-    padding: 90px 20px;
+    height: calc(100vh - 70px);
+    width: 100%;
+    padding: 20px;
     text-align: center;
     color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
     border-bottom: 1px solid var(--card-border);
 }
 
 .hero-section h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 50px;
+    font-size: 56px;
     font-weight: 700;
     margin: 0 0 15px 0;
     color: var(--text-primary);
@@ -489,7 +494,7 @@ button {
 
 .hero-subtitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
     color: var(--text-secondary);
     max-width: 680px;
@@ -1084,6 +1089,44 @@ html.lenis body {
     }
     .catalog-hero-content p {
         font-size: 14px;
+    }
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.bouncing-arrow {
+    font-size: 16px;
+    color: var(--accent);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
     }
 }
 
