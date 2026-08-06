@@ -8,7 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const lightSwitchBtn = '<button class="nav-btn" onclick="css_switch()" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>';
         const logoImgPath = `${basePath}/image/logo.png`;
         const homePath = isSubDir ? `${basePath}/index.html` : 'index.html';
+        const catalogPath = isSubDir ? `${basePath}/catalog.html` : 'catalog.html';
         const feedbackPath = isSubDir ? 'course.html?id=feedback' : './courses/course.html?id=feedback';
+
+        // Detect active state
+        const isCatalog = window.location.pathname.includes("catalog.html");
+        const isFeedback = window.location.search.includes("id=feedback") || window.location.href.includes("id=feedback");
+        const isHome = !isCatalog && !isFeedback;
+
+        const homeActive = isHome ? "active" : "";
+        const catalogActive = isCatalog ? "active" : "";
+        const feedbackActive = isFeedback ? "active" : "";
 
         headerContainer.innerHTML = `
     <!-- Back to Top Button -->
@@ -26,9 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </a>
             
             <ul class="nav-links">
-                <li><a href="${homePath}">Home</a></li>
+                <li><a href="${homePath}" class="${homeActive}">Home</a></li>
+                <li><a href="${catalogPath}" class="${catalogActive}">Courses</a></li>
                 <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute</a></li>
-                <li><a href="${feedbackPath}">Feedback</a></li>
+                <li><a href="${feedbackPath}" class="${feedbackActive}">Feedback</a></li>
             </ul>
 
             <div class="nav-actions">

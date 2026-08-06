@@ -68,7 +68,7 @@ body {
     flex-direction: column;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    padding-top: 60px;
+    padding-top: 70px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -227,7 +227,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: var(--navbar-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -252,12 +252,12 @@ header nav {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     text-decoration: none;
     color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     transition: transform 0.2s ease;
 }
 
@@ -266,8 +266,8 @@ header nav {
 }
 
 .logo-img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
 }
 
@@ -279,7 +279,7 @@ header nav .nav-links {
     list-style-type: none;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
@@ -292,13 +292,39 @@ header nav .nav-links li a {
     color: var(--text-secondary);
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
+    padding: 6px 0;
 }
 
-header nav .nav-links li a:hover {
+header nav .nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+header nav .nav-links li a:hover::after,
+header nav .nav-links li a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header nav .nav-links li a:hover,
+header nav .nav-links li a.active {
     color: var(--accent);
+}
+
+header nav .nav-links li a.active {
+    font-weight: 600;
 }
 
 .nav-actions {
@@ -373,10 +399,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(9, 13, 22, 0.75), rgba(9, 13, 22, 0.9)), url(../image/cover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #ffffff;
     height: 200px;
     border-bottom: 1px solid var(--card-border);

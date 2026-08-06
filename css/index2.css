@@ -42,7 +42,7 @@ body {
     flex-direction: column;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    padding-top: 60px;
+    padding-top: 70px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -203,12 +203,13 @@ main,
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #00f2fe 0%, #4facfe 100%);
 }
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: var(--navbar-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -233,12 +234,12 @@ header nav {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     text-decoration: none;
     color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     transition: transform 0.2s ease;
 }
 
@@ -247,8 +248,8 @@ header nav {
 }
 
 .logo-img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
 }
 
@@ -256,7 +257,7 @@ header nav .nav-links {
     list-style-type: none;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     margin: 0;
     padding: 0;
 }
@@ -269,12 +270,39 @@ header nav .nav-links li a {
     color: var(--text-secondary);
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
+    padding: 6px 0;
 }
-header nav .nav-links li a:hover {
+
+header nav .nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+header nav .nav-links li a:hover::after,
+header nav .nav-links li a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header nav .nav-links li a:hover,
+header nav .nav-links li a.active {
     color: var(--accent);
+}
+
+header nav .nav-links li a.active {
+    font-weight: 600;
 }
 
 .nav-actions {
@@ -438,10 +466,7 @@ button {
 }
 
 .hero-section {
-    background: linear-gradient(rgba(9, 13, 22, 0.8), rgba(9, 13, 22, 0.95)), url(../image/cover.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     padding: 90px 20px;
     text-align: center;
     color: var(--text-primary);
@@ -823,5 +848,242 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
     pointer-events: none;
+}
+
+/* Landing Page Improvements (Option B) */
+
+/* Hero Actions */
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-btn.primary {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+}
+
+.hero-btn.primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.hero-btn.secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+}
+
+.hero-btn.secondary:hover {
+    background-color: var(--card-border);
+    transform: translateY(-2px);
+}
+
+/* Landing sections typography */
+.landing-section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Steps Grid */
+.steps-section {
+    padding: 60px 0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.step-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.step-icon {
+    font-size: 32px;
+    color: var(--accent);
+    background-color: var(--accent-bg);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.step-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 40px 0;
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    margin: 40px 0;
+}
+
+.stats-panel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.1;
+}
+
+.stat-item .stat-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+/* Catalog Hero Section */
+.catalog-hero {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.catalog-hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.catalog-hero-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Search and filter bar (Catalog Page) */
+.search-filter-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.search-filter-bar .search-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+}
+
+.search-filter-bar .search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+.search-filter-bar #course-search {
+    width: 100%;
+    padding: 16px 20px 16px 54px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 30px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+}
+
+.search-filter-bar #course-search:focus {
+    background-color: var(--card-bg);
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(56, 189, 248, 0.15);
+}
+
+@media screen and (max-width: 768px) {
+    .hero-btn {
+        width: 100%;
+    }
+    .landing-section-title {
+        font-size: 22px;
+    }
+    .stats-panel {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .catalog-hero-content h1 {
+        font-size: 28px;
+    }
+    .catalog-hero-content p {
+        font-size: 14px;
+    }
 }
 

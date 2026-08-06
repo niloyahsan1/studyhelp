@@ -26,30 +26,55 @@
             <p class="hero-subtitle">Access and share exam prep materials, notes, lab guides, and slides for BRAC
                 University courses.</p>
 
-            <!-- Live Search Inside Hero -->
-            <div class="search-container">
-                <i class="fa fa-search search-icon"></i>
-                <input type="text" id="course-search" placeholder="Search for courses (e.g. CSE110, MAT110, Bangla)...">
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+                <a href="catalog.html" class="hero-btn primary">Explore All Courses</a>
+                <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank" class="hero-btn secondary">Contribute Files</a>
             </div>
         </div>
     </section>
 
     <!-- Main Container -->
     <main class="main-container">
-        <!-- Filter Navigation -->
-        <div class="filter-tabs-container">
-            <div class="filter-tabs">
-                <button class="tab-btn active" data-filter="all">All Departments</button>
-                <button class="tab-btn" data-filter="cse">CSE</button>
-                <button class="tab-btn" data-filter="mns">MNS</button>
-                <button class="tab-btn" data-filter="others">Others</button>
+        <!-- How It Works Section -->
+        <section class="steps-section">
+            <h2 class="landing-section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3>1. Search or Browse</h3>
+                    <p>Enter your course code (like CSE110 or BNG103) to instantly locate resources.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <h3>2. Access Materials</h3>
+                    <p>Download mid exam questions, lecture slides, notes, books, and lab assignments.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h3>3. Help Your Peers</h3>
+                    <p>Upload slides, assignments, and notes to our community storage drive.</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Dynamic Course Catalog Grid -->
-        <div id="course-catalog-grid">
-            <!-- Loaded dynamically by JS -->
-        </div>
+        <!-- Stats Panel -->
+        <section class="stats-section">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Active Courses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free Access</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Departments</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Unified Community Section -->
         <div class="community-banner">
@@ -75,113 +100,7 @@
 
 
     <script>
-        function openFolder(link, target) {
-            window.open(link, target);
-        }
-    </script>
-    <script src="./js/courses_data.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const searchInput = document.getElementById("course-search");
-            const tabButtons = document.querySelectorAll(".tab-btn");
-
-            function getDepartment(key) {
-                const k = key.toLowerCase();
-                if (k.startsWith("cse")) return "cse";
-                if (k.startsWith("mat") || k.startsWith("phy") || k.startsWith("sta")) return "mns";
-                return "others";
-            }
-
-            function renderCatalog() {
-                const query = searchInput.value.toLowerCase().trim();
-                const activeTab = document.querySelector(".tab-btn.active").getAttribute("data-filter");
-
-                const cseContainer = [];
-                const mnsContainer = [];
-                const othersContainer = [];
-
-                Object.keys(window.coursesData).forEach(key => {
-                    const course = window.coursesData[key];
-                    if (key === "feedback") return; // Skip feedback form
-
-                    const matchQuery = (course.title && course.title.toLowerCase().includes(query)) ||
-                        (course.subtitle && course.subtitle.toLowerCase().includes(query)) ||
-                        key.toLowerCase().includes(query);
-
-                    const dept = getDepartment(key);
-                    const matchTab = (activeTab === "all" || activeTab === dept);
-
-                    if (matchQuery && matchTab) {
-                        const courseCode = course.title || key.toUpperCase();
-                        const courseName = course.subtitle || courseCode;
-                        const cardHTML = `
-                    <div class="course-card" onclick="openFolder('./courses/course.html?id=${key}', '_blank')">
-                        <div class="course-card-content">
-                            <span class="course-badge">${courseCode}</span>
-                            <h4 class="course-name">${courseName}</h4>
-                        </div>
-                        <div class="course-arrow">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </div>
-                    </div>
-                    `;
-                        if (dept === "cse") cseContainer.push(cardHTML);
-                        else if (dept === "mns") mnsContainer.push(cardHTML);
-                        else othersContainer.push(cardHTML);
-                    }
-                });
-
-                let catalogHTML = "";
-
-                if (cseContainer.length > 0) {
-                    catalogHTML += `
-                <div class="section-title">
-                    <span>COMPUTER SCIENCE & ENGINEERING</span>
-                    <span class="section-count">${cseContainer.length}</span>
-                </div>
-                <div class="button-container">${cseContainer.join("")}</div>
-                `;
-                }
-                if (mnsContainer.length > 0) {
-                    catalogHTML += `
-                <div class="section-title">
-                    <span>MATH & PHYSICS</span>
-                    <span class="section-count">${mnsContainer.length}</span>
-                </div>
-                <div class="button-container">${mnsContainer.join("")}</div>
-                `;
-                }
-                if (othersContainer.length > 0) {
-                    catalogHTML += `
-                <div class="section-title">
-                    <span>OTHERS (RS, ENG, COD, ELECTIVE)</span>
-                    <span class="section-count">${othersContainer.length}</span>
-                </div>
-                <div class="button-container">${othersContainer.join("")}</div>
-                `;
-                }
-
-                if (catalogHTML === "") {
-                    catalogHTML = `<div style="text-align: center; color: var(--text-secondary); font-size: 16px; margin: 80px 0; width: 100%; font-family: 'Poppins', sans-serif;">No matching courses found.</div>`;
-                }
-
-                document.getElementById("course-catalog-grid").innerHTML = catalogHTML;
-            }
-
-            if (searchInput) {
-                searchInput.addEventListener("input", renderCatalog);
-            }
-
-            tabButtons.forEach(btn => {
-                btn.addEventListener("click", function () {
-                    tabButtons.forEach(b => b.classList.remove("active"));
-                    this.classList.add("active");
-                    renderCatalog();
-                });
-            });
-
-            renderCatalog();
-        });
+        // No search element on this page
     </script>
 
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
