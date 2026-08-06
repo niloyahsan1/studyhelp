@@ -906,10 +906,22 @@ img:hover{
     color: var(--accent);
     text-decoration: none;
     font-weight: 500;
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 
-.footer-bottom a:hover {
-    text-decoration: underline;
+@keyframes glow {
+    from {
+        text-shadow:
+            0 0 5px var(--accent),
+            0 0 10px var(--accent);
+    }
+
+    to {
+        text-shadow:
+            0 0 10px var(--accent),
+            0 0 20px var(--accent),
+            0 0 40px var(--accent);
+    }
 }
 
 .nav-social-links {

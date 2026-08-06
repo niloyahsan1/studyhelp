@@ -121,12 +121,12 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             
             <div class="footer-col">
-                <h4>Navigation</h4>
+                <h4>Explore</h4>
                 <ul class="footer-links">
                     <li><a href="${fHomePath}">Home</a></li>
-                    <li><a href="${fCatalogPath}">Courses Catalog</a></li>
-                    <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute Files</a></li>
-                    <li><a href="${fFeedbackPath}">Share Feedback</a></li>
+                    <li><a href="${fCatalogPath}">Courses</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute</a></li>
+                    <li><a href="${fFeedbackPath}">Feedback</a></li>
                 </ul>
             </div>
             
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="footer-divider"></div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Study Help. All rights reserved.</p>
+            <p>&copy; 2023-2026 Study Help. All rights reserved.</p>
             <p>Designed & Implemented by <a href="https://niloyahsan.is-a.dev" target="_blank">Niloy Ahsan</a></p>
         </div>
     </footer>
