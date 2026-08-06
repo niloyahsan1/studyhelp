@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${fLogoPath}" alt="Logo" class="logo-img">
                     <span>Study Help</span>
                 </a>
-                <p class="footer-desc">An open-source repository of lecture slides, exam papers, lab reports, and prep materials for BRAC University courses.</p>
+                <p class="footer-desc">An open-source repository of lecture slides, exam questions, lab guides, and prep materials for BRAC University courses.</p>
                 <div class="footer-socials">
                     <a href="https://www.messenger.com/t/100014394886198" target="_blank" title="Messenger"><i class="fa-brands fa-facebook-messenger"></i></a>
                     <a href="https://www.facebook.com/niloy.ahsan09/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <ul class="footer-links">
                     <li><a href="${fHomePath}">Home</a></li>
                     <li><a href="${fCatalogPath}">Courses Catalog</a></li>
-                    <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute Slides</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute Files</a></li>
                     <li><a href="${fFeedbackPath}">Share Feedback</a></li>
                 </ul>
             </div>
