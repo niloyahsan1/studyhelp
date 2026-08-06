@@ -483,23 +483,38 @@ button {
     border-bottom: 1px solid var(--card-border);
 }
 
-.hero-section h1 {
+.hero-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 56px;
-    font-weight: 700;
-    margin: 0 0 15px 0;
-    color: var(--text-primary);
-    letter-spacing: 1px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 0 25px 0;
+}
+
+.title-top {
+    display: block;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.title-bottom {
+    display: block;
+    font-size: 96px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.0;
+    letter-spacing: -2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .hero-subtitle {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--text-secondary);
-    max-width: 680px;
-    margin: 0 0 35px 0;
+    max-width: 750px;
+    margin: 0 auto 45px auto;
     line-height: 1.6;
 }
 
@@ -809,15 +824,19 @@ img:hover{
         padding: 12px 16px;
     }
 
-    .hero-section h1 {
-        font-size: 32px;
-        margin-top: 20px;
-        margin-bottom: 10px;
+    .title-top {
+        font-size: 24px;
+        margin-bottom: 6px;
+    }
+
+    .title-bottom {
+        font-size: 52px;
+        letter-spacing: -1px;
     }
 
     .hero-subtitle {
-        font-size: 15px;
-        margin-bottom: 25px;
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
     .cta-grid {
@@ -887,6 +906,7 @@ html.lenis body {
     text-decoration: none;
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    min-width: 220px;
 }
 
 .hero-btn.primary {
@@ -1119,7 +1139,7 @@ html.lenis body {
     text-transform: uppercase;
     opacity: 0.8;
     pointer-events: none;
-    animation: fadeInUp 1s ease-out 0.8s both;
+    animation: fadeInUpScroll 1s ease-out 0.8s both;
 }
 
 .bouncing-arrow {
@@ -1137,6 +1157,19 @@ html.lenis body {
     }
     60% {
         transform: translateY(-4px);
+    }
+}
+
+@keyframes fadeInUpScroll {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 16px);
+        filter: blur(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        filter: blur(0);
     }
 }
 
