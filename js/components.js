@@ -43,13 +43,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 <li><a href="${catalogPath}" class="${catalogActive}">Courses</a></li>
                 <li><a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing" target="_blank">Contribute</a></li>
                 <li><a href="${feedbackPath}" class="${feedbackActive}">Feedback</a></li>
+                <li class="mobile-only-link"><a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank"><i class="fa-brands fa-github" style="margin-right: 8px;"></i>GitHub</a></li>
             </ul>
 
             <div class="nav-actions">
                 ${lightSwitchBtn}
-                <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank" class="nav-btn" title="GitHub Repository">
+                <a href="https://github.com/niloyahsan1/studyhelp.git" target="_blank" class="nav-btn github-desktop" title="GitHub Repository">
                     <i class="fa-brands fa-github"></i>
                 </a>
+                <button class="menu-toggle-btn" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </nav>
     </header>
@@ -57,6 +61,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Force synchronize stylesheet and button state
         applyTheme(currentTheme);
+
+        // Hamburger menu toggle logic
+        const menuToggle = headerContainer.querySelector('.menu-toggle-btn');
+        const navLinks = headerContainer.querySelector('.nav-links');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    if (navLinks.classList.contains('active')) {
+                        icon.className = 'fa-solid fa-xmark';
+                    } else {
+                        icon.className = 'fa-solid fa-bars';
+                    }
+                }
+            });
+
+            // Close menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) icon.className = 'fa-solid fa-bars';
+                });
+            });
+        }
 
         // Inject supporting scripts dynamically if not already loaded
         loadScript(`${basePath}/js/backToTop.js`);
