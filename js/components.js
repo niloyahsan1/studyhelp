@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Back to Top Button -->
     <button class="backToTop"><i class="fa fa-arrow-up"></i></button>
 
-    <!-- Page Loader -->
-    <div class="loader"></div>
-
     <!-- Scroll Bar -->
     <div class="header_scroll"></div>
 
@@ -46,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Inject supporting scripts dynamically if not already loaded
         loadScript(`${basePath}/js/backToTop.js`);
-        loadScript(`${basePath}/js/page_loader.js`);
         loadScript(`${basePath}/js/header_scroll.js`);
     }
 

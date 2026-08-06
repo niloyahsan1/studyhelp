@@ -36,28 +36,6 @@
 
     <!-- Main Container -->
     <main class="main-container">
-        <!-- CTA Cards Grid (Contribute & Feedback side by side) -->
-        <div class="cta-grid">
-            <div class="cta-card upload-card">
-                <div class="cta-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                <div class="cta-info">
-                    <h3>Contribute Resources</h3>
-                    <p>Share your slides, notes, or past papers to support other students.</p>
-                    <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing"
-                        target="_blank" class="cta-btn">Upload Resources</a>
-                </div>
-            </div>
-
-            <div class="cta-card feedback-card">
-                <div class="cta-icon"><i class="fa-solid fa-comment-dots"></i></div>
-                <div class="cta-info">
-                    <h3>Share Feedback</h3>
-                    <p>Help us improve by leaving your valuable comments or suggestions.</p>
-                    <a href="./courses/course.html?id=feedback" target="_blank" class="cta-btn">Give Feedback</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Filter Navigation -->
         <div class="filter-tabs-container">
             <div class="filter-tabs">
@@ -71,6 +49,25 @@
         <!-- Dynamic Course Catalog Grid -->
         <div id="course-catalog-grid">
             <!-- Loaded dynamically by JS -->
+        </div>
+
+        <!-- Unified Community Section -->
+        <div class="community-banner">
+            <div class="community-info">
+                <h3>Help build the ultimate study resource</h3>
+                <p>Support your peers by sharing course files, or help us improve the platform with your ideas.</p>
+            </div>
+            <div class="community-actions">
+                <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing"
+                    target="_blank" class="community-btn primary">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Contribute Resources</span>
+                </a>
+                <a href="./courses/course.html?id=feedback" target="_blank" class="community-btn secondary">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span>Share Feedback</span>
+                </a>
+            </div>
         </div>
     </main>
 
@@ -115,9 +112,17 @@
                     const matchTab = (activeTab === "all" || activeTab === dept);
 
                     if (matchQuery && matchTab) {
+                        const courseCode = course.title || key.toUpperCase();
+                        const courseName = course.subtitle || courseCode;
                         const cardHTML = `
-                    <div class="folder-box" onclick="openFolder('./courses/course.html?id=${key}', '_blank')">
-                        <h3>${course.title}${course.subtitle ? ': ' + course.subtitle : ''}</h3>
+                    <div class="course-card" onclick="openFolder('./courses/course.html?id=${key}', '_blank')">
+                        <div class="course-card-content">
+                            <span class="course-badge">${courseCode}</span>
+                            <h4 class="course-name">${courseName}</h4>
+                        </div>
+                        <div class="course-arrow">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
                     </div>
                     `;
                         if (dept === "cse") cseContainer.push(cardHTML);
@@ -130,25 +135,34 @@
 
                 if (cseContainer.length > 0) {
                     catalogHTML += `
-                <div class="h2-con"><h2>COMPUTER SCIENCE & ENGINEERING (CSE)</h2></div>
+                <div class="section-title">
+                    <span>COMPUTER SCIENCE & ENGINEERING</span>
+                    <span class="section-count">${cseContainer.length}</span>
+                </div>
                 <div class="button-container">${cseContainer.join("")}</div>
                 `;
                 }
                 if (mnsContainer.length > 0) {
                     catalogHTML += `
-                <div class="h2-con"><h2>MATH & PHYSICS (MNS)</h2></div>
+                <div class="section-title">
+                    <span>MATH & PHYSICS</span>
+                    <span class="section-count">${mnsContainer.length}</span>
+                </div>
                 <div class="button-container">${mnsContainer.join("")}</div>
                 `;
                 }
                 if (othersContainer.length > 0) {
                     catalogHTML += `
-                <div class="h2-con"><h2>OTHERS (RS, ENG, COD, ELECTIVE)</h2></div>
+                <div class="section-title">
+                    <span>OTHERS (RS, ENG, COD, ELECTIVE)</span>
+                    <span class="section-count">${othersContainer.length}</span>
+                </div>
                 <div class="button-container">${othersContainer.join("")}</div>
                 `;
                 }
 
                 if (catalogHTML === "") {
-                    catalogHTML = `<div style="text-align: center; color: #a3bbc8; font-size: 18px; margin: 80px 0; width: 100%; font-family: 'Poppins', sans-serif;">No matching courses found.</div>`;
+                    catalogHTML = `<div style="text-align: center; color: var(--text-secondary); font-size: 16px; margin: 80px 0; width: 100%; font-family: 'Poppins', sans-serif;">No matching courses found.</div>`;
                 }
 
                 document.getElementById("course-catalog-grid").innerHTML = catalogHTML;
