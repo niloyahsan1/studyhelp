@@ -37,11 +37,11 @@ function applyTheme(theme) {
 
 // Immediately apply saved theme on load to prevent flashes
 (function() {
-    const savedTheme = localStorage.getItem("theme") || "light";
+    const savedTheme = localStorage.getItem("theme") || "dark";
     applyTheme(savedTheme);
 })();
 
 document.addEventListener("DOMContentLoaded", function() {
-    const savedTheme = localStorage.getItem("theme") || "light";
+    const savedTheme = localStorage.getItem("theme") || "dark";
     applyTheme(savedTheme);
 });

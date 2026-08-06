@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load Header Component if element exists
     const headerContainer = document.getElementById("header-component");
     if (headerContainer) {
-        const lightSwitchBtn = '<button class="nav-btn" onclick="css_switch()" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>';
+        const currentTheme = localStorage.getItem("theme") || "dark";
+        const iconClass = currentTheme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        const btnTitle = currentTheme === "dark" ? "Switch to Light Theme" : "Switch to Dark Theme";
+        const lightSwitchBtn = `<button class="nav-btn" onclick="css_switch()" title="${btnTitle}"><i class="${iconClass}"></i></button>`;
         const logoImgPath = `${basePath}/image/logo.png`;
         const homePath = isSubDir ? `${basePath}/index.html` : 'index.html';
         const catalogPath = isSubDir ? `${basePath}/catalog.html` : 'catalog.html';
@@ -51,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </nav>
     </header>
 `;
+
+        // Force synchronize stylesheet and button state
+        applyTheme(currentTheme);
 
         // Inject supporting scripts dynamically if not already loaded
         loadScript(`${basePath}/js/backToTop.js`);
