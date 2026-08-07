@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const feedbackPath = isSubDir ? 'course.html?id=feedback' : './courses/course.html?id=feedback';
 
         // Detect active state
-        const isCatalog = window.location.pathname.includes("catalog.html");
+        const isCatalog = window.location.pathname.includes("catalog.html") || (window.location.pathname.includes("course.html") && !window.location.search.includes("id=feedback"));
         const isFeedback = window.location.search.includes("id=feedback") || window.location.href.includes("id=feedback");
         const isHome = !isCatalog && !isFeedback;
 

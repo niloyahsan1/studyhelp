@@ -362,8 +362,8 @@ header nav .nav-links li a.active {
 }
 
 .folder-box {
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 160px;
     border: 1px solid var(--card-border);
     background-color: var(--card-bg);
     border-radius: 16px;
@@ -373,45 +373,56 @@ header nav .nav-links li a.active {
     align-items: center;
     text-align: center;
     cursor: pointer;
-    margin: 30px;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    margin: 0;
+    padding: 20px;
     box-shadow: var(--card-shadow);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
 }
 
 .folder-box:hover {
     background-color: var(--bg-secondary);
     border-color: var(--accent);
     box-shadow: var(--card-hover-shadow);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
 .folder-icon {
-    font-size: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 4px;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .folder-box:hover .folder-icon {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 h1 {
-    font-size: 55px;
+    font-size: 52px;
+    font-weight: 800;
     text-align: center;
     margin: 0;
-    color: #ffffff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    letter-spacing: -1px;
 }
 
 .h1-con {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15) 0%, rgba(9, 13, 22, 0) 70%), linear-gradient(135deg, #0b1329 0%, #050811 100%);
     color: #ffffff;
-    height: 200px;
+    min-height: 220px;
+    padding: 40px 20px;
     border-bottom: 1px solid var(--card-border);
+    text-align: center;
 }
 
 h2 {
@@ -496,7 +507,12 @@ iframe {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
     background-color: transparent;
+    box-sizing: border-box;
 }
 
 /* ======================== Footer ======================== */
@@ -739,20 +755,19 @@ iframe {
     }
 
     .folder-box {
-        width: calc(50% - 20px);
-        height: 180px;
-        margin: 10px;
-        font-size: 14px;
+        width: calc(50% - 8px);
+        height: 140px;
+        padding: 16px;
         border-radius: 12px;
+        margin: 0;
     }
 
     .folder-icon {
-        height: 90px;
-        font-size: 60px;
+        font-size: 32px;
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 34px;
     }
 
     h2 {
@@ -857,10 +872,4 @@ html.lenis body {
     color: #a3bbc8;
 }
 
-.folder-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 120px;
-    font-size: 80px;
-}
+/* Removed duplicate folder-icon styles */
