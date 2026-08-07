@@ -1433,10 +1433,6 @@ html.lenis body {
     animation: marquee 25s linear infinite;
 }
 
-.feedback-marquee-track:hover {
-    animation-play-state: paused;
-}
-
 @keyframes marquee {
     0% {
         transform: translateX(0);

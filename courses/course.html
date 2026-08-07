@@ -110,7 +110,7 @@
                 iframeContainer.style.display = "block";
                 document.getElementById("course-iframe").src = course.iframe;
             } else if (course.folders && course.folders.length > 0) {
-                foldersContainer.style.display = "flex";
+                foldersContainer.style.display = "";
                 iframeContainer.style.display = "none";
 
                 let foldersHTML = "";
@@ -125,7 +125,7 @@
                 });
                 foldersContainer.innerHTML = foldersHTML;
             } else {
-                foldersContainer.style.display = "flex";
+                foldersContainer.style.display = "";
                 iframeContainer.style.display = "none";
                 foldersContainer.innerHTML = `<p style="color: #a3bbc8; font-size: 18px; text-align: center; width: 100%; margin: 50px 0;">No folder resources found for this course.</p>`;
             }
