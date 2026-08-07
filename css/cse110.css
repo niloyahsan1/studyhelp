@@ -33,6 +33,11 @@ html {
     --footer-bg: #090d16;
     --footer-text: #94a3b8;
     --footer-border: rgba(255, 255, 255, 0.08);
+
+    --header-bg: linear-gradient(135deg, #0b1329 0%, #050811 100%);
+    --header-radial: radial-gradient(circle at top, rgba(56, 189, 248, 0.15) 0%, rgba(9, 13, 22, 0) 70%);
+    --header-text: #ffffff;
+    --header-text-gradient: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
 }
 
 [data-theme="light"] {
@@ -60,6 +65,11 @@ html {
     --footer-bg: #ffffff;
     --footer-text: #475569;
     --footer-border: #e2e8f0;
+
+    --header-bg: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    --header-radial: radial-gradient(circle at top, rgba(37, 99, 235, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+    --header-text: #0f172a;
+    --header-text-gradient: linear-gradient(135deg, #0f172a 0%, #475569 100%);
 }
 
 body {
@@ -405,10 +415,10 @@ h1 {
     font-weight: 800;
     text-align: center;
     margin: 0;
-    background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+    background: var(--header-text-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     letter-spacing: -1px;
 }
 
@@ -417,8 +427,8 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15) 0%, rgba(9, 13, 22, 0) 70%), linear-gradient(135deg, #0b1329 0%, #050811 100%);
-    color: #ffffff;
+    background: var(--header-radial), var(--header-bg);
+    color: var(--header-text);
     min-height: 220px;
     padding: 40px 20px;
     border-bottom: 1px solid var(--card-border);
