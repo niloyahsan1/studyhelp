@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/cse110.css">
+    <link rel="website icon" type="png" href="../image/logo.png">
+    <script src="../js/mode.js"></script>
+    <title>Course Resources</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
+</head>
+
+<body>
+
+    <div id="header-component"></div>
+
+    <div id="header" class="h1-con">
+        <h1 id="course-title">Loading...</h1>
+    </div>
+
+    <div id="subtitle-wrapper" class="h2-con">
+        <h2 id="course-subtitle">Loading course details...</h2>
+    </div>
+
+    <div class="space"></div>
+    <div class="extra-space"></div>
+
+    <!-- Dynamic folder container -->
+    <div id="folders-container" class="button-container">
+        <!-- Dynamic folders populated by JS -->
+    </div>
+
+    <!-- Dynamic Form/Iframe Container -->
+    <div id="iframe-container" class="form-container" style="display: none;">
+        <iframe id="course-iframe" src="" width="640" height="1200" frameborder="0" marginheight="0"
+            marginwidth="0">Loading…</iframe>
+    </div>
+
+    <div class="extra-space"></div>
+    <div id="footer-component"></div>
+
+    <script>
+        function openFolder(link, target) {
+            window.open(link, target);
+        }
+    </script>
+    <script src="../js/courses_data.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const courseId = params.get('id');
+
+            if (!courseId || !window.coursesData || !window.coursesData[courseId]) {
+                window.location.href = "../index.html";
+                return;
+            }
+
+            const course = window.coursesData[courseId];
+
+            // Update title & browser tab title
+            const cleanTitle = course.title || courseId.toUpperCase();
+            document.getElementById("course-title").textContent = cleanTitle;
+            document.title = `${cleanTitle} - Study Help`;
+
+            // Update subtitle if exists
+            const subtitleWrapper = document.getElementById("subtitle-wrapper");
+            if (course.subtitle) {
+                document.getElementById("course-subtitle").textContent = course.subtitle;
+                subtitleWrapper.style.display = "flex";
+            } else {
+                subtitleWrapper.style.display = "none";
+            }
+
+            const foldersContainer = document.getElementById("folders-container");
+            const iframeContainer = document.getElementById("iframe-container");
+
+            function getResourceIcon(name) {
+                const n = name.toLowerCase();
+                if (n.includes('presentation') || n.includes('slides') || n.includes('slide')) {
+                    return '<i class="fa-solid fa-person-chalkboard text-accent"></i>';
+                }
+                if (n.includes('quiz') || n.includes('short test')) {
+                    return '<i class="fa-solid fa-file-circle-question text-quiz"></i>';
+                }
+                if (n.includes('mid')) {
+                    return '<i class="fa-solid fa-file-signature text-mid"></i>';
+                }
+                if (n.includes('final')) {
+                    return '<i class="fa-solid fa-graduation-cap text-final"></i>';
+                }
+                if (n.includes('book')) {
+                    return '<i class="fa-solid fa-book-open text-book"></i>';
+                }
+                if (n.includes('lab') || n.includes('code') || n.includes('assignment')) {
+                    return '<i class="fa-solid fa-laptop-code text-lab"></i>';
+                }
+                if (n.includes('note') || n.includes('lecture')) {
+                    return '<i class="fa-solid fa-pen-to-square text-notes"></i>';
+                }
+                return '<i class="fa-solid fa-folder-open text-default"></i>';
+            }
+
+            // Handle iframe forms vs normal resource folders
+            if (course.iframe) {
+                foldersContainer.style.display = "none";
+                iframeContainer.style.display = "block";
+                document.getElementById("course-iframe").src = course.iframe;
+            } else if (course.folders && course.folders.length > 0) {
+                foldersContainer.style.display = "flex";
+                iframeContainer.style.display = "none";
+
+                let foldersHTML = "";
+                course.folders.forEach(function (folder) {
+                    const iconHTML = getResourceIcon(folder.name);
+                    foldersHTML += `
+                    <div class="folder-box" onclick="openFolder('${folder.link}', '_blank')">
+                        <span class="folder-icon">${iconHTML}</span>
+                        <h3>${folder.name}</h3>
+                    </div>
+                    `;
+                });
+                foldersContainer.innerHTML = foldersHTML;
+            } else {
+                foldersContainer.style.display = "flex";
+                iframeContainer.style.display = "none";
+                foldersContainer.innerHTML = `<p style="color: #a3bbc8; font-size: 18px; text-align: center; width: 100%; margin: 50px 0;">No folder resources found for this course.</p>`;
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="../js/lenis_init.js"></script>
+    <script src="../js/components.js"></script>
+</body>
+
+</html>

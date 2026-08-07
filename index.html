@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="./css/index1.css">
+    <link rel="website icon" type="png" href="./image/logo.png">
+    <script src="./js/mode.js"></script>
+    <title>Home - Study Help</title>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
+</head>
+
+<body>
+
+    <div id="header-component" data-is-home="true"></div>
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line accent-text">Study Help</span>
+                <span class="title-line">Resource Hub</span>
+            </h1>
+            <p class="hero-subtitle">An open-source repository of lecture slides, exam questions, lab guides, and prep
+                materials for BRAC University courses.</p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+                <a href="catalog.html" class="hero-btn primary">Explore All Courses</a>
+                <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing"
+                    target="_blank" class="hero-btn secondary">Contribute Files</a>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fa-solid fa-chevron-down bouncing-arrow"></i>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- How It Works Section -->
+        <section class="steps-section">
+            <h2 class="landing-section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3>1. Search or Browse</h3>
+                    <p>Enter your course code (like CSE110 or BNG103) to instantly locate resources.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <h3>2. Access Materials</h3>
+                    <p>Download exam questions, lecture slides, notes, books, and lab assignments.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <h3>3. Help Your Peers</h3>
+                    <p>Upload slides, assignments, and notes to our community storage drive.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Panel -->
+        <section class="stats-section">
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-courses">0</span>
+                    <span class="stat-label">Active Courses</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-free">0</span>
+                    <span class="stat-label">Free Access</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-departments">0</span>
+                    <span class="stat-label">Departments</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unified Community Section -->
+        <div class="community-banner">
+            <div class="community-info">
+                <h3>Help build the ultimate study resource</h3>
+                <p>Support your peers by sharing course files, or help us improve the platform with your ideas.</p>
+            </div>
+            <div class="community-actions">
+                <a href="https://drive.google.com/drive/folders/1Im4c1Rmvl3mo7BanixPvcEtwGlMfAa7d?usp=sharing"
+                    target="_blank" class="community-btn primary">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <span>Contribute Files</span>
+                </a>
+                <a href="./courses/course.html?id=feedback" target="_blank" class="community-btn secondary">
+                    <i class="fa-solid fa-comment-dots"></i>
+                    <span>Share Feedback</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-component"></div>
+
+
+    <script src="./js/courses_data.js"></script>
+    <script>
+        // Animate a number counting up from 0
+        function animateCount(el, target, suffix, duration) {
+            const startTime = performance.now();
+            function step(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - (1 - progress) * (1 - progress);
+                const current = Math.floor(eased * target);
+                el.textContent = current + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const statsSection = document.querySelector(".stats-section");
+            if (!statsSection || !window.coursesData) return;
+
+            const keys = Object.keys(window.coursesData);
+            const courseKeys = keys.filter(k => k !== "feedback");
+            const coursesRounded = Math.floor(courseKeys.length / 10) * 10;
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        const coursesEl = document.getElementById("stat-courses");
+                        const freeEl = document.getElementById("stat-free");
+                        const deptsEl = document.getElementById("stat-departments");
+
+                        if (coursesEl) animateCount(coursesEl, coursesRounded, "+", 1500);
+                        if (freeEl) animateCount(freeEl, 100, "%", 1500);
+                        if (deptsEl) animateCount(deptsEl, 3, "", 1500);
+
+                        observer.unobserve(statsSection);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            observer.observe(statsSection);
+        });
+    </script>
+
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="./js/lenis_init.js"></script>
+    <script src="./js/components.js"></script>
+</body>
+
+</html>
